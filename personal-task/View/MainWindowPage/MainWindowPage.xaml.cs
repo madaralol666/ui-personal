@@ -13,21 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace personal_task.View.LoginPage
+namespace personal_task.View.MainWindowPage
 {
     /// <summary>
-    /// Логика взаимодействия для LoginPage.xaml
+    /// Логика взаимодействия для MainWindowPage.xaml
     /// </summary>
-    public partial class LoginPage : Page
+    public partial class MainWindowPage : Page
     {
-        public LoginPage()
+        public MainWindowPage()
         {
             InitializeComponent();
-        }
-
-        private void Close_Click(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Shutdown();
         }
     }
 }

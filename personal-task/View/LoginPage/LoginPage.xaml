@@ -85,12 +85,14 @@
                         Width="195"
                         materialDesign:HintAssist.Hint="Введите Уникальный ID"
                         materialDesign:TextFieldAssist.HasClearButton="True"
+                        materialDesign:TextFieldAssist.UnderlineBrush="AliceBlue"
                         FontSize="15"
                         Foreground="White"
                         BorderBrush="White"/>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button
+                            BorderThickness="1.5"
                             Margin="15 10 0 0"
                             Padding="0"
                             x:Name="BtnLogin"
@@ -98,7 +100,6 @@
                             Width="195"
                             Background="Transparent"
                             BorderBrush="{Binding ElementName=btntext, Path=Foreground}"
-                            Click="BtnLogin_Click"
                             Effect="{StaticResource MaterialDesignElevationShadow12}">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon Kind="VirtualMeeting"
