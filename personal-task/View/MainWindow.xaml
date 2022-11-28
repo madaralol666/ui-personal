@@ -1,0 +1,30 @@
+﻿<Window x:Class="personal_task.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:personal_task"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="600" 
+        Width="1000"
+        FontFamily="Consolas"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        Background="Transparent"
+        AllowsTransparency="True">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Source="/Images/bg_m.jpg"
+               Grid.RowSpan="2">
+        </Image>
+        <Frame x:Name="MainWindowFrame"
+               Grid.RowSpan="2"/>
+    </Grid>
+
+</Window>
