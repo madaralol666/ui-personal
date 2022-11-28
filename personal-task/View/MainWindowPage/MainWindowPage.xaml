@@ -25,6 +25,30 @@
                     <GradientStop Color="#FF00CAFF" Offset="1"/>
                 </LinearGradientBrush>
             </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"/>
+                    <RowDefinition Height="500"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <StackPanel Orientation="Vertical"
+                                HorizontalAlignment="Left"
+                                VerticalAlignment="Top">
+                        <TextBlock
+                            Margin="15 15 0 0"
+                            Text="Учитель/Студент/Админ"/>
+                        <TextBlock
+                            Margin="15 15 0 0"
+                            Text="@персональный ID"/>
+                        <TextBlock
+                            Margin="15 15 0 0"
+                            Text="Main info"/>
+
+
+                    </StackPanel>
+                    
+                </Grid>
+            </Grid>
 
             
         </Border>
