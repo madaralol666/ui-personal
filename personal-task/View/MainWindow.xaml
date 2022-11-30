@@ -14,7 +14,8 @@
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
         Background="Transparent"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
@@ -24,7 +25,8 @@
                Grid.RowSpan="2">
         </Image>
         <Frame x:Name="MainWindowFrame"
-               Grid.RowSpan="2"/>
+               Grid.RowSpan="2"
+               NavigationUIVisibility="Hidden"/>
     </Grid>
 
 </Window>

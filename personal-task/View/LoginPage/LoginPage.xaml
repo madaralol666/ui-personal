@@ -47,7 +47,7 @@
                         FontWeight="SemiBold"
                         Foreground="White"
                         Text="ДКИТ"/>
-                        
+
                     </StackPanel>
                     <Button x:Name="Close"
                         VerticalAlignment="Top"
@@ -56,7 +56,7 @@
                             Padding="0"
                             Click="Close_Click"
                             Style="{StaticResource MaterialDesignIconButton}">
-                            <materialDesign:PackIcon Kind="Power"
+                        <materialDesign:PackIcon Kind="Power"
                                                  Width="30"
                                                  Height="30"
                                                  Foreground="White"/>
@@ -98,6 +98,7 @@
                             x:Name="BtnLogin"
                             Height="40"
                             Width="195"
+                            Click="BtnLogin_Click"
                             Background="Transparent"
                             BorderBrush="{Binding ElementName=btntext, Path=Foreground}"
                             Effect="{StaticResource MaterialDesignElevationShadow12}">
@@ -109,10 +110,10 @@
                                            x:Name="btntext"
                                            Foreground="White"/>
                             </StackPanel>
-                            
+
                         </Button>
                     </StackPanel>
-                    
+
                 </StackPanel>
             </Grid>
         </Border>

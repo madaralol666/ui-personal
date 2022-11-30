@@ -1,4 +1,7 @@
-﻿using System;
+﻿using personal_task.Core;
+using personal_task.Model;
+using personal_task.View.MainWindowPage;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +31,34 @@ namespace personal_task.View.LoginPage
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+        private void BtnLogin_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                User userModel = FrameNavigate.DB.User.FirstOrDefault(u => u.LastName == TbLogin.Text);
+                if (userModel != null)
+                {
+                    LastNameUser.lastName = TbLogin.Text;
+                    FrameNavigate.objectFrame.Navigate(new MainWindowPage1());
+
+                }
+                else
+                {
+                    MessageBox.Show("Ошибка данных",
+                       "Системное сообщение",
+                       MessageBoxButton.OK,
+                       MessageBoxImage.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString(),
+                    "Системная ошибка",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+            }
         }
     }
 }

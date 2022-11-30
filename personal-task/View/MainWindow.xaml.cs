@@ -1,4 +1,5 @@
 ﻿using personal_task.Core;
+using personal_task.Model;
 using personal_task.View.LoginPage;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,13 @@ namespace personal_task
         {
             InitializeComponent();
             FrameNavigate.objectFrame = MainWindowFrame;
-            /*FrameNavigate.DB = new finalProjectDBEntities();*/
+            FrameNavigate.DB = new StudentDBEntities();
             MainWindowFrame.Navigate(new LoginPage());
+        }
+
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            DragMove();
         }
     }
 }
