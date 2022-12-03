@@ -80,6 +80,7 @@
                                              Foreground="White"
                                              Margin="0 5 0 0"/>
                         <TextBox
+                            KeyDown="TbLogin_KeyDown"
                         CaretBrush="White"
                         x:Name="TbLogin"
                         Width="195"

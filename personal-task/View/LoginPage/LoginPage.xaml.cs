@@ -26,6 +26,7 @@ namespace personal_task.View.LoginPage
         public LoginPage()
         {
             InitializeComponent();
+            User userModel = FrameNavigate.DB.User.FirstOrDefault(u => u.LastName == TbLogin.Text);
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -58,6 +59,14 @@ namespace personal_task.View.LoginPage
                     "Системная ошибка",
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
+            }
+        }
+
+        private void TbLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                BtnLogin_Click(sender, e);
             }
         }
     }

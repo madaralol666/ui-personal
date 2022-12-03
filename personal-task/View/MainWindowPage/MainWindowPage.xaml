@@ -46,7 +46,8 @@
                     <StackPanel Orientation="Vertical"
                                 HorizontalAlignment="Left"
                                 VerticalAlignment="Top">
-                        <StackPanel Orientation="Horizontal">
+                        <StackPanel Orientation="Horizontal"
+                                    Margin="0 15 0 0">
                             <materialDesign:PackIcon Kind="UserOutline"
                                                      Margin="15 16 -10 0"
                                                      Padding="0"
@@ -78,7 +79,7 @@
                         </StackPanel>
                         <StackPanel Orientation="Horizontal"
                                     Margin="0 -15 0 0">
-                            <materialDesign:PackIcon Kind="InfoOutline"
+                            <materialDesign:PackIcon Kind="DateRange"
                                                      Margin="15 16 -10 0"
                                                      Padding="0"
                                                      Width="30"
@@ -91,12 +92,263 @@
                             FontSize="25"
                             Text="Main info"/>
                         </StackPanel>
-                        
+
                     </StackPanel>
                 </Grid>
+                <Border
+                    VerticalAlignment="Top"
+                    Grid.Row="1"
+                    BorderBrush="White"
+                    BorderThickness="2"
+                    Width="900"
+                    Height="425"
+                    CornerRadius="25">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="212.5"/>
+                            <RowDefinition Height="212.5"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition Width="300"/>
+                                <ColumnDefinition Width="300"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel 
+                                Grid.Column="0"
+                                        VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Vertical">
+                                <TextBlock
+                                    MaxWidth="150"
+                                FontSize="25"
+                                Foreground="White"
+                                FontWeight="SemiBold"
+                                Text="Понедельник"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel 
+                                Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Vertical">
+                                <TextBlock
+                                    MaxWidth="150"
+                                FontSize="25"
+                                Foreground="White"
+                                FontWeight="SemiBold"
+                                Text="Вторник"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel 
+                                Grid.Column="2"
+                                        VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Vertical">
+                                <TextBlock
+                                    MaxWidth="150"
+                                FontSize="25"
+                                Foreground="White"
+                                FontWeight="SemiBold"
+                                Text="Среда"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="450"/>
+                                <ColumnDefinition Width="450"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel 
+                                Grid.Column="0"
+                                        VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Vertical">
+                                <TextBlock
+                                    MaxWidth="150"
+                                FontSize="25"
+                                Foreground="White"
+                                FontWeight="SemiBold"
+                                Text="Четверг"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel 
+                                Grid.Column="1"
+                                        VerticalAlignment="Center"
+                                    HorizontalAlignment="Center"
+                                    Orientation="Vertical">
+                                <TextBlock
+                                    MaxWidth="150"
+                                FontSize="25"
+                                Foreground="White"
+                                FontWeight="SemiBold"
+                                Text="Пятница"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+
+                </Border>
+
+
+                <!--<Grid Grid.Row="1">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="225"/>
+                            <RowDefinition Height="225"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="300"/>
+                            <ColumnDefinition Width="300"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Orientation="Horizontal">
+                            <StackPanel Grid.Row="1"
+                                    Margin="150 30 0 0"
+                                    Orientation="Vertical">
+                                <TextBlock
+                                FontSize="25"
+                                Foreground="White"
+                                FontWeight="SemiBold"
+                                Text="Понедельник"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1"
+                                    Margin="150 30 0 0"
+                                    Orientation="Vertical">
+                                <TextBlock
+                                FontSize="25"
+                                Foreground="White"
+                                FontWeight="SemiBold"
+                                Text="Вторник"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                            </StackPanel>
+                            <StackPanel Grid.Row="1"
+                                    Margin="150 30 0 0"
+                                    Orientation="Vertical">
+                                <TextBlock
+                                FontSize="25"
+                                Foreground="White"
+                                FontWeight="SemiBold"
+                                Text="Среда"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                                <TextBlock
+                                    Margin="0 10 0 0"
+                                    Text="1. Предмет"
+                                    FontSize="15"
+                                    Foreground="White"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>-->
             </Grid>
 
-            
+
         </Border>
     </Grid>
 </Page>

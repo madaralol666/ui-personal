@@ -19,6 +19,7 @@ namespace personal_task.Model
         public string LastName { get; set; }
         public int RoleID { get; set; }
         public int CircleID { get; set; }
+        public System.DateTime Date { get; set; }
     
         public virtual Circle Circle { get; set; }
         public virtual Role Role { get; set; }

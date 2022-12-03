@@ -28,8 +28,12 @@ namespace personal_task.View.MainWindowPage
             User userModel = FrameNavigate.DB.User.FirstOrDefault(u => u.LastName == LastNameUser.lastName);
             Role rolemodel = FrameNavigate.DB.Role.FirstOrDefault(u => u.RoleID == userModel.RoleID);
 
-            TBID.Text = "@" + userModel.LastName;
-            TBRole.Text =rolemodel.RoleName;
+           
+            TBRole.Text = rolemodel.RoleName;
+            TBID.Text = "@" + userModel.FirstName;
+            TBInfo.Text = Convert.ToString($"{userModel.Date.Day}.{userModel.Date.Month}.{userModel.Date.Year}");
+
+
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
