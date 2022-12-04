@@ -1,15 +1,16 @@
-﻿<Page x:Class="personal_task.View.LoginPage.LoginPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      xmlns:local="clr-namespace:personal_task.View.LoginPage"
-      mc:Ignorable="d" 
-      d:DesignHeight="600" 
-      d:DesignWidth="1000"
-      FontFamily="Consolas"
-      Title="LoginPage">
+﻿<Page
+    x:Class="personal_task.View.LoginPage.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:personal_task.View.LoginPage"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="LoginPage"
+    d:DesignHeight="600"
+    d:DesignWidth="1000"
+    FontFamily="Consolas"
+    mc:Ignorable="d">
 
     <Grid>
         <Border
@@ -20,96 +21,104 @@
             CornerRadius="25"
             Effect="{StaticResource MaterialDesignElevationShadow12}">
             <Border.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF81D2E8"/>
-                    <GradientStop Color="#FF00CAFF" Offset="1"/>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FF81D2E8" />
+                    <GradientStop Offset="1" Color="#FF00CAFF" />
                 </LinearGradientBrush>
             </Border.Background>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="100"/>
-                    <RowDefinition Height="150"/>
-                    <RowDefinition Height="150"/>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="150" />
+                    <RowDefinition Height="150" />
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <StackPanel Orientation ="Horizontal"
-                                Margin="10 10 0 0"
-                                HorizontalAlignment="Left"
-                                VerticalAlignment="Top">
-                        <materialDesign:PackIcon Kind="AccountStudentOutline"
-                                                     Width="30"
-                                                     Height="30"
-                                                     Foreground="White"/>
-                        <TextBlock
+                    <StackPanel
+                        Margin="10,10,0,0"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        FontSize="25"
-                        FontWeight="SemiBold"
-                        Foreground="White"
-                        Text="ДКИТ"/>
+                        Orientation="Horizontal">
+                        <materialDesign:PackIcon
+                            Width="30"
+                            Height="30"
+                            Foreground="White"
+                            Kind="AccountStudentOutline" />
+                        <TextBlock
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Top"
+                            FontSize="25"
+                            FontWeight="SemiBold"
+                            Foreground="White"
+                            Text="ДКИТ" />
 
                     </StackPanel>
-                    <Button x:Name="Close"
+                    <Button
+                        x:Name="Close"
+                        Margin="0,15,15,0"
+                        Padding="0"
+                        HorizontalAlignment="Right"
                         VerticalAlignment="Top"
-                            HorizontalAlignment="Right"
-                            Margin="0 15 15 0"
-                            Padding="0"
-                            Click="Close_Click"
-                            Style="{StaticResource MaterialDesignIconButton}">
-                        <materialDesign:PackIcon Kind="Power"
-                                                 Width="30"
-                                                 Height="30"
-                                                 Foreground="White"/>
+                        Click="Close_Click"
+                        Style="{StaticResource MaterialDesignIconButton}">
+                        <materialDesign:PackIcon
+                            Width="30"
+                            Height="30"
+                            Foreground="White"
+                            Kind="Power" />
                     </Button>
                 </Grid>
-                <StackPanel Grid.Row="1"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center">
-                    <TextBlock
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Text="Вход"
-                        FontSize="35"
-                        Foreground="White"/>
-
-                    <StackPanel
-                        Orientation="Horizontal"
+                <StackPanel
+                    Grid.Row="1"
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-                        <materialDesign:PackIcon Kind="Login"
-                                             Foreground="White"
-                                             Margin="0 5 0 0"/>
-                        <TextBox
-                            KeyDown="TbLogin_KeyDown"
-                        CaretBrush="White"
-                        x:Name="TbLogin"
-                        Width="195"
-                        materialDesign:HintAssist.Hint="Введите Уникальный ID"
-                        materialDesign:TextFieldAssist.HasClearButton="True"
-                        materialDesign:TextFieldAssist.UnderlineBrush="AliceBlue"
-                        FontSize="15"
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        FontSize="35"
                         Foreground="White"
-                        BorderBrush="White"/>
+                        Text="Вход" />
+
+                    <StackPanel
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal">
+                        <materialDesign:PackIcon
+                            Margin="0,5,0,0"
+                            Foreground="White"
+                            Kind="Login" />
+                        <TextBox
+                            x:Name="TbLogin"
+                            Width="195"
+                            materialDesign:HintAssist.Hint="Введите Уникальный ID"
+                            materialDesign:TextFieldAssist.HasClearButton="True"
+                            materialDesign:TextFieldAssist.UnderlineBrush="AliceBlue"
+                            BorderBrush="White"
+                            CaretBrush="White"
+                            FontSize="15"
+                            Foreground="White"
+                            KeyDown="TbLogin_KeyDown" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button
-                            BorderThickness="1.5"
-                            Margin="15 10 0 0"
-                            Padding="0"
                             x:Name="BtnLogin"
-                            Height="40"
                             Width="195"
-                            Click="BtnLogin_Click"
+                            Height="40"
+                            Margin="15,10,0,0"
+                            Padding="0"
                             Background="Transparent"
                             BorderBrush="{Binding ElementName=btntext, Path=Foreground}"
+                            BorderThickness="1.5"
+                            Click="BtnLogin_Click"
                             Effect="{StaticResource MaterialDesignElevationShadow12}">
                             <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon Kind="VirtualMeeting"
-                                                         Foreground="White"
-                                                         Margin="0 0 5 0"/>
-                                <TextBlock Text="Войти"
-                                           x:Name="btntext"
-                                           Foreground="White"/>
+                                <materialDesign:PackIcon
+                                    Margin="0,0,5,0"
+                                    Foreground="White"
+                                    Kind="VirtualMeeting" />
+                                <TextBlock
+                                    x:Name="btntext"
+                                    Foreground="White"
+                                    Text="Войти" />
                             </StackPanel>
 
                         </Button>

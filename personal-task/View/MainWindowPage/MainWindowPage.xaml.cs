@@ -40,5 +40,13 @@ namespace personal_task.View.MainWindowPage
         {
             Application.Current.Shutdown();
         }
+
+        private void TextBlock_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("Ошибка данных",
+                       "Системное сообщение",
+                       MessageBoxButton.OK,
+                       MessageBoxImage.Error);
+        }
     }
 }
