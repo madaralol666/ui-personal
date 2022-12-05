@@ -14,14 +14,20 @@ namespace personal_task.Model
     
     public partial class User
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public User()
+        {
+            this.UsersCircles = new HashSet<UsersCircle>();
+        }
+    
         public int UserID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int RoleID { get; set; }
-        public int CircleID { get; set; }
         public System.DateTime Date { get; set; }
     
-        public virtual Circle Circle { get; set; }
         public virtual Role Role { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<UsersCircle> UsersCircles { get; set; }
     }
 }

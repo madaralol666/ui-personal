@@ -25,13 +25,14 @@ namespace personal_task.View.MainWindowPage
         public MainWindowPage1()
         {
             InitializeComponent();
-            User userModel = FrameNavigate.DB.User.FirstOrDefault(u => u.LastName == LastNameUser.lastName);
-            Role rolemodel = FrameNavigate.DB.Role.FirstOrDefault(u => u.RoleID == userModel.RoleID);
+            User userModel = FrameNavigate.DB.Users.FirstOrDefault(u => u.LastName == LastNameUser.lastName);
+            Role rolemodel = FrameNavigate.DB.Roles.FirstOrDefault(u => u.RoleID == userModel.RoleID);
+            UsersCircle UCModel = FrameNavigate.DB.UsersCircles.def
 
            
             TBRole.Text = rolemodel.RoleName;
             TBID.Text = "@" + userModel.FirstName;
-            TBInfo.Text = Convert.ToString($"{userModel.Date.Day}.{userModel.Date.Month}.{userModel.Date.Year}");
+            TBInfo.Text = Convert.ToString($"{userModel.Date.Day}.{userModel.Date.Month}.{userModel.Date.Year} {userModel.UsersCircles}");
 
 
         }

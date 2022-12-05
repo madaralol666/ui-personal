@@ -26,7 +26,7 @@ namespace personal_task.View.LoginPage
         public LoginPage()
         {
             InitializeComponent();
-            User userModel = FrameNavigate.DB.User.FirstOrDefault(u => u.LastName == TbLogin.Text);
+            User userModel = FrameNavigate.DB.Users.FirstOrDefault(u => u.LastName == TbLogin.Text);
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -38,7 +38,7 @@ namespace personal_task.View.LoginPage
         {
             try
             {
-                User userModel = FrameNavigate.DB.User.FirstOrDefault(u => u.LastName == TbLogin.Text);
+                User userModel = FrameNavigate.DB.Users.FirstOrDefault(u => u.LastName == TbLogin.Text);
                 if (userModel != null)
                 {
                     LastNameUser.lastName = TbLogin.Text;

@@ -12,18 +12,13 @@ namespace personal_task.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Circle
+    public partial class UsersCircle
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Circle()
-        {
-            this.UsersCircles = new HashSet<UsersCircle>();
-        }
+        public int UserID { get; set; }
+        public int CicleID { get; set; }
+        public string C_ { get; set; }
     
-        public int CircleID { get; set; }
-        public string CircleName { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UsersCircle> UsersCircles { get; set; }
+        public virtual Circle Circle { get; set; }
+        public virtual User User { get; set; }
     }
 }

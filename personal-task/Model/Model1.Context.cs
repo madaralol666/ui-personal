@@ -25,8 +25,9 @@ namespace personal_task.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Circle> Circle { get; set; }
-        public virtual DbSet<Role> Role { get; set; }
-        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<Circle> Circles { get; set; }
+        public virtual DbSet<Role> Roles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<UsersCircle> UsersCircles { get; set; }
     }
 }
