@@ -17,13 +17,13 @@ namespace personal_task.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Circle()
         {
-            this.UsersCircles = new HashSet<UsersCircle>();
+            this.UserCircles = new HashSet<UserCircle>();
         }
     
         public int CircleID { get; set; }
         public string CircleName { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<UsersCircle> UsersCircles { get; set; }
+        public virtual ICollection<UserCircle> UserCircles { get; set; }
     }
 }

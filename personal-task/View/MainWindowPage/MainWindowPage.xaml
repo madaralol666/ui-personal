@@ -32,72 +32,28 @@
                     <RowDefinition Height="450" />
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <Button
-                        x:Name="BtnClose"
-                        Margin="0,15,15,0"
-                        Padding="0"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        Click="BtnClose_Click"
-                        Style="{StaticResource MaterialDesignIconButton}">
-                        <materialDesign:PackIcon
-                            Width="30"
-                            Height="30"
-                            Foreground="White"
-                            Kind="Power"/>
-                    </Button>
-                    <StackPanel
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Orientation="Vertical">
-                        <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
-                            <materialDesign:PackIcon
-                                Width="30"
-                                Height="30"
-                                Margin="15,16,-10,0"
-                                Padding="0"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Kind="UserOutline" />
-                            <TextBlock
-                                x:Name="TBRole"
-                                Margin="15,15,0,0"
-                                Padding="0"
+                    <DataGrid
+                        x:Name="DataInfo"
+                        Grid.Row="0"
+                        AutoGenerateColumns="False"
+                        Background="Transparent"
+                        CanUserAddRows="False"
+                        CanUserDeleteRows="False"
+                        CanUserResizeColumns="False"
+                        CanUserResizeRows="False"
+                        CanUserSortColumns="False"
+                        ColumnHeaderHeight="50"
+                        Effect="{StaticResource MaterialDesignElevationShadow16}"
+                        FontSize="15"
+                        GridLinesVisibility="None"
+                        IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Binding="{Binding CircleID}"
                                 FontSize="25"
-                                Foreground="white"
-                                Text="Role" />
-                        </StackPanel>
-                        <StackPanel Margin="0,-15,0,0" Orientation="Horizontal">
-                            <materialDesign:PackIcon
-                                Width="30"
-                                Height="30"
-                                Margin="15,16,-10,0"
-                                Padding="0"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Kind="ConfirmationNumberOutline" />
-                            <TextBlock
-                                x:Name="TBID"
-                                Margin="15,15,0,0"
-                                FontSize="25"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Text="@персональный ID" />
-                        </StackPanel>
-                        <StackPanel Margin="0,-15,0,0" Orientation="Horizontal">
-                            <materialDesign:PackIcon
-                                Width="30"
-                                Height="30"
-                                Margin="15,16,-10,0"
-                                Padding="0"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Kind="DateRange" />
-                            <TextBlock
-                                x:Name="TBInfo"
-                                Margin="15,15,0,0"
-                                FontSize="25"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Text="Main info" />
-                        </StackPanel>
-
-                    </StackPanel>
+                                Foreground="White" />
+                        </DataGrid.Columns>
+                    </DataGrid>
                 </Grid>
                 <Border
                     Grid.Row="1"
@@ -112,7 +68,7 @@
                             <RowDefinition Height="212.5" />
                             <RowDefinition Height="212.5" />
                         </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
+                        <Grid x:Name="gridnoob" Grid.Row="0">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="300" />
                                 <ColumnDefinition Width="300" />
@@ -133,8 +89,8 @@
                                     Margin="0,10,0,0"
                                     FontSize="15"
                                     Foreground="White"
-                                    Text="1. Предмет"
-                                    PreviewMouseDown="TextBlock_PreviewMouseDown"/>
+                                    PreviewMouseDown="TextBlock_PreviewMouseDown"
+                                    Text="1. Предмет" />
                                 <TextBlock
                                     Margin="0,10,0,0"
                                     FontSize="15"
@@ -267,3 +223,89 @@
         </Border>
     </Grid>
 </Page>
+
+
+
+
+<!--<Button
+                        x:Name="BtnClose"
+                        Margin="0,15,15,0"
+                        Padding="0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Click="BtnClose_Click"
+                        Style="{StaticResource MaterialDesignIconButton}">
+    <materialDesign:PackIcon
+                            Width="30"
+                            Height="30"
+                            Foreground="White"
+                            Kind="Power" />
+</Button>
+<StackPanel
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        Orientation="Vertical">-->
+<!--<StackPanel Margin="0,15,0,0" Orientation="Horizontal">
+                            <materialDesign:PackIcon
+                                Width="30"
+                                Height="30"
+                                Margin="15,16,-10,0"
+                                Padding="0"
+                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
+                                Kind="UserOutline" />
+                            <TextBlock
+                                x:Name="TBRole"
+                                Margin="15,15,0,0"
+                                Padding="0"
+                                FontSize="25"
+                                Foreground="white"
+                                Text="Role" />
+                        </StackPanel>-->
+<!--
+    <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
+        <materialDesign:PackIcon
+                                Width="30"
+                                Height="30"
+                                Margin="15,16,-10,0"
+                                Padding="0"
+                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
+                                Kind="UserOutline" />
+        <TextBlock
+                                x:Name="TBRole"
+                                Margin="15,15,0,0"
+                                Padding="0"
+                                FontSize="25"
+                                Foreground="white"
+                                Text="Role" />
+    </StackPanel>
+    <StackPanel Margin="0,-15,0,0" Orientation="Horizontal">
+        <materialDesign:PackIcon
+                                Width="30"
+                                Height="30"
+                                Margin="15,16,-10,0"
+                                Padding="0"
+                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
+                                Kind="ConfirmationNumberOutline" />
+        <TextBlock
+                                x:Name="TBID"
+                                Margin="15,15,0,0"
+                                FontSize="25"
+                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
+                                Text="@персональный ID" />
+    </StackPanel>
+    <StackPanel Margin="0,-15,0,0" Orientation="Horizontal">
+        <materialDesign:PackIcon
+                                Width="30"
+                                Height="30"
+                                Margin="15,16,-10,0"
+                                Padding="0"
+                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
+                                Kind="DateRange" />
+        <TextBlock
+                                x:Name="TBInfo"
+                                Margin="15,15,0,0"
+                                FontSize="25"
+                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
+                                Text="Main info" />
+    </StackPanel>
+</StackPanel>-->

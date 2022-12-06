@@ -25,15 +25,21 @@ namespace personal_task.View.MainWindowPage
         public MainWindowPage1()
         {
             InitializeComponent();
-            User userModel = FrameNavigate.DB.Users.FirstOrDefault(u => u.LastName == LastNameUser.lastName);
-            Role rolemodel = FrameNavigate.DB.Roles.FirstOrDefault(u => u.RoleID == userModel.RoleID);
-            UsersCircle UCModel = FrameNavigate.DB.UsersCircles.def
+            /*            User userModel = FrameNavigate.DB.Users.FirstOrDefault(u => u.LastName == LastNameUser.lastName);
+                        Role rolemodel = FrameNavigate.DB.Roles.FirstOrDefault(u => u.RoleID == userModel.RoleID);
 
-           
-            TBRole.Text = rolemodel.RoleName;
-            TBID.Text = "@" + userModel.FirstName;
-            TBInfo.Text = Convert.ToString($"{userModel.Date.Day}.{userModel.Date.Month}.{userModel.Date.Year} {userModel.UsersCircles}");
 
+                        TBRole.Text = rolemodel.RoleName;
+                        TBID.Text = "@" + userModel.FirstName;
+                        TBInfo.Text = Convert.ToString($"{userModel.Date.Day}.{userModel.Date.Month}.{userModel.Date.Year} {userModel.UsersCircles}");*/
+            /*DataInfo.ItemsSource = FrameNavigate.DB.UserCircles.OrderBy(u => u.CircleID).ToList();*/
+            /*DataInfo.ItemsSource = FrameNavigate.DB.Users.OrderBy(u => u.UserID).ToList();*/
+            /*DataInfo.ItemsSource = FrameNavigate.DB.Users.Where(u => u.LastName == LastNameUser.lastName).ToList();*/
+
+
+            DataInfo.ItemsSource = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == LastNameUser.lastName).ToList();
+
+            /*Role rolemodel = FrameNavigate.DB.Roles.FirstOrDefault(u => u.RoleID == userModel.RoleID); */
 
         }
 

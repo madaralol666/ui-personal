@@ -9,5 +9,8 @@ namespace personal_task.Core
     public static class LastNameUser
     {
         public static string lastName { get; set; }
+        public static int test { get; set; }
+
+
     }
 }

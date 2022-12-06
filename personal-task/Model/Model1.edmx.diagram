@@ -4,14 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d2de97fafff74324be85ebf8a72048a7" Name="Diagram1">
+      <Diagram DiagramId="44f796183dbc4840b6a1d6a9883296f5" Name="Diagram1">
         <EntityTypeShape EntityType="StudentDBModel.Circle" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentDBModel.Role" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="StudentDBModel.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="StudentDBModel.UsersCircle" Width="2.25" PointX="5.25" PointY="1.875" IsExpanded="true" />
-        <AssociationConnector Association="StudentDBModel.FK_UsersCircles_Circle" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="StudentDBModel.UserCircle" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="StudentDBModel.FK_UserCircles_Circle" ManuallyRouted="false" />
         <AssociationConnector Association="StudentDBModel.FK_User_Role" ManuallyRouted="false" />
-        <AssociationConnector Association="StudentDBModel.FK_UsersCircles_User" ManuallyRouted="false" />
+        <AssociationConnector Association="StudentDBModel.FK_UserCircles_User" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

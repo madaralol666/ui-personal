@@ -12,11 +12,11 @@ namespace personal_task.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class UsersCircle
+    public partial class UserCircle
     {
+        public int UserCircleID { get; set; }
         public int UserID { get; set; }
-        public int CicleID { get; set; }
-        public string C_ { get; set; }
+        public int CircleID { get; set; }
     
         public virtual Circle Circle { get; set; }
         public virtual User User { get; set; }
