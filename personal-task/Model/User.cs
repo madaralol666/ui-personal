@@ -24,8 +24,6 @@ namespace personal_task.Model
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int RoleID { get; set; }
-        public System.DateTime Date { get; set; }
-        public string Circle { get; set; }
     
         public virtual Role Role { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

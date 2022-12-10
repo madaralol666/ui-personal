@@ -4,33 +4,31 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище StudentDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище StudentDBModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Circle">
           <Key>
             <PropertyRef Name="CircleID" />
           </Key>
           <Property Name="CircleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CircleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CircleName" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="RoleID" />
           </Key>
           <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="RoleName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleName" Type="nchar" MaxLength="10" Nullable="false" />
         </EntityType>
         <EntityType Name="User">
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
           <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="LastName" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="RoleID" Type="int" Nullable="false" />
-          <Property Name="Date" Type="date" Nullable="false" />
-          <Property Name="Circle" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
-        <EntityType Name="UserCircles">
+        <EntityType Name="UserCircle">
           <Key>
             <PropertyRef Name="UserCircleID" />
           </Key>
@@ -50,26 +48,26 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserCircles_Circle">
+        <Association Name="FK_UserCircle_Circle">
           <End Role="Circle" Type="Self.Circle" Multiplicity="1" />
-          <End Role="UserCircles" Type="Self.UserCircles" Multiplicity="*" />
+          <End Role="UserCircle" Type="Self.UserCircle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Circle">
               <PropertyRef Name="CircleID" />
             </Principal>
-            <Dependent Role="UserCircles">
+            <Dependent Role="UserCircle">
               <PropertyRef Name="CircleID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserCircles_User">
+        <Association Name="FK_UserCircle_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="UserCircles" Type="Self.UserCircles" Multiplicity="*" />
+          <End Role="UserCircle" Type="Self.UserCircle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="UserID" />
             </Principal>
-            <Dependent Role="UserCircles">
+            <Dependent Role="UserCircle">
               <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
@@ -78,21 +76,22 @@
           <EntitySet Name="Circle" EntityType="Self.Circle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="UserCircles" EntityType="Self.UserCircles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserCircle" EntityType="Self.UserCircle" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Role" />
             <End Role="User" EntitySet="User" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserCircles_Circle" Association="Self.FK_UserCircles_Circle">
+          <AssociationSet Name="FK_UserCircle_Circle" Association="Self.FK_UserCircle_Circle">
             <End Role="Circle" EntitySet="Circle" />
-            <End Role="UserCircles" EntitySet="UserCircles" />
+            <End Role="UserCircle" EntitySet="UserCircle" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserCircles_User" Association="Self.FK_UserCircles_User">
+          <AssociationSet Name="FK_UserCircle_User" Association="Self.FK_UserCircle_User">
             <End Role="User" EntitySet="User" />
-            <End Role="UserCircles" EntitySet="UserCircles" />
+            <End Role="UserCircle" EntitySet="UserCircle" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="StudentDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -101,15 +100,15 @@
             <PropertyRef Name="CircleID" />
           </Key>
           <Property Name="CircleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CircleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="UserCircles" Relationship="Self.FK_UserCircles_Circle" FromRole="Circle" ToRole="UserCircles" />
+          <Property Name="CircleName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="UserCircles" Relationship="Self.FK_UserCircle_Circle" FromRole="Circle" ToRole="UserCircle" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
             <PropertyRef Name="RoleID" />
           </Key>
           <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
         </EntityType>
         <EntityType Name="User">
@@ -117,13 +116,11 @@
             <PropertyRef Name="UserID" />
           </Key>
           <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="RoleID" Type="Int32" Nullable="false" />
-          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
           <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
-          <NavigationProperty Name="UserCircles" Relationship="Self.FK_UserCircles_User" FromRole="User" ToRole="UserCircles" />
-          <Property Name="Circle" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="UserCircles" Relationship="Self.FK_UserCircle_User" FromRole="User" ToRole="UserCircle" />
         </EntityType>
         <EntityType Name="UserCircle">
           <Key>
@@ -132,17 +129,17 @@
           <Property Name="UserCircleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="CircleID" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Circle" Relationship="Self.FK_UserCircles_Circle" FromRole="UserCircles" ToRole="Circle" />
-          <NavigationProperty Name="User" Relationship="Self.FK_UserCircles_User" FromRole="UserCircles" ToRole="User" />
+          <NavigationProperty Name="Circle" Relationship="Self.FK_UserCircle_Circle" FromRole="UserCircle" ToRole="Circle" />
+          <NavigationProperty Name="User" Relationship="Self.FK_UserCircle_User" FromRole="UserCircle" ToRole="User" />
         </EntityType>
-        <Association Name="FK_UserCircles_Circle">
+        <Association Name="FK_UserCircle_Circle">
           <End Role="Circle" Type="Self.Circle" Multiplicity="1" />
-          <End Role="UserCircles" Type="Self.UserCircle" Multiplicity="*" />
+          <End Role="UserCircle" Type="Self.UserCircle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Circle">
               <PropertyRef Name="CircleID" />
             </Principal>
-            <Dependent Role="UserCircles">
+            <Dependent Role="UserCircle">
               <PropertyRef Name="CircleID" />
             </Dependent>
           </ReferentialConstraint>
@@ -159,14 +156,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_UserCircles_User">
+        <Association Name="FK_UserCircle_User">
           <End Role="User" Type="Self.User" Multiplicity="1" />
-          <End Role="UserCircles" Type="Self.UserCircle" Multiplicity="*" />
+          <End Role="UserCircle" Type="Self.UserCircle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="UserID" />
             </Principal>
-            <Dependent Role="UserCircles">
+            <Dependent Role="UserCircle">
               <PropertyRef Name="UserID" />
             </Dependent>
           </ReferentialConstraint>
@@ -176,17 +173,17 @@
           <EntitySet Name="Roles" EntityType="Self.Role" />
           <EntitySet Name="Users" EntityType="Self.User" />
           <EntitySet Name="UserCircles" EntityType="Self.UserCircle" />
-          <AssociationSet Name="FK_UserCircles_Circle" Association="Self.FK_UserCircles_Circle">
+          <AssociationSet Name="FK_UserCircle_Circle" Association="Self.FK_UserCircle_Circle">
             <End Role="Circle" EntitySet="Circles" />
-            <End Role="UserCircles" EntitySet="UserCircles" />
+            <End Role="UserCircle" EntitySet="UserCircles" />
           </AssociationSet>
           <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
             <End Role="Role" EntitySet="Roles" />
             <End Role="User" EntitySet="Users" />
           </AssociationSet>
-          <AssociationSet Name="FK_UserCircles_User" Association="Self.FK_UserCircles_User">
+          <AssociationSet Name="FK_UserCircle_User" Association="Self.FK_UserCircle_User">
             <End Role="User" EntitySet="Users" />
-            <End Role="UserCircles" EntitySet="UserCircles" />
+            <End Role="UserCircle" EntitySet="UserCircles" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -214,18 +211,16 @@
           <EntitySetMapping Name="Users">
             <EntityTypeMapping TypeName="StudentDBModel.User">
               <MappingFragment StoreEntitySet="User">
-                <ScalarProperty Name="Circle" ColumnName="Circle" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="FirstName" ColumnName="FirstName" />
                 <ScalarProperty Name="LastName" ColumnName="LastName" />
                 <ScalarProperty Name="RoleID" ColumnName="RoleID" />
-                <ScalarProperty Name="Date" ColumnName="Date" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="UserCircles">
             <EntityTypeMapping TypeName="StudentDBModel.UserCircle">
-              <MappingFragment StoreEntitySet="UserCircles">
+              <MappingFragment StoreEntitySet="UserCircle">
                 <ScalarProperty Name="UserCircleID" ColumnName="UserCircleID" />
                 <ScalarProperty Name="UserID" ColumnName="UserID" />
                 <ScalarProperty Name="CircleID" ColumnName="CircleID" />

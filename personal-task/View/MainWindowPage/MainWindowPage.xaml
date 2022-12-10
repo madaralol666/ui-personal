@@ -32,280 +32,139 @@
                     <RowDefinition Height="450" />
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
-                    <DataGrid
-                        x:Name="DataInfo"
-                        Grid.Row="0"
-                        AutoGenerateColumns="False"
-                        Background="Transparent"
-                        CanUserAddRows="False"
-                        CanUserDeleteRows="False"
-                        CanUserResizeColumns="False"
-                        CanUserResizeRows="False"
-                        CanUserSortColumns="False"
-                        ColumnHeaderHeight="50"
-                        Effect="{StaticResource MaterialDesignElevationShadow16}"
-                        FontSize="15"
-                        GridLinesVisibility="None"
-                        IsReadOnly="True">
-                        <DataGrid.Columns>
-                            <DataGridTextColumn
-                                Binding="{Binding CircleID}"
-                                FontSize="25"
-                                Foreground="White" />
-                        </DataGrid.Columns>
-                    </DataGrid>
-                </Grid>
-                <Border
-                    Grid.Row="1"
-                    Width="900"
-                    Height="425"
-                    VerticalAlignment="Top"
-                    BorderBrush="White"
-                    BorderThickness="2"
-                    CornerRadius="25">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="212.5" />
-                            <RowDefinition Height="212.5" />
-                        </Grid.RowDefinitions>
-                        <Grid x:Name="gridnoob" Grid.Row="0">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="300" />
-                                <ColumnDefinition Width="300" />
-                                <ColumnDefinition Width="300" />
-                            </Grid.ColumnDefinitions>
-                            <StackPanel
-                                Grid.Column="0"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Orientation="Vertical">
-                                <TextBlock
-                                    MaxWidth="150"
-                                    FontSize="25"
-                                    FontWeight="SemiBold"
-                                    Foreground="White"
-                                    Text="Понедельник" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    PreviewMouseDown="TextBlock_PreviewMouseDown"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                            </StackPanel>
-                            <StackPanel
-                                Grid.Column="1"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Orientation="Vertical">
-                                <TextBlock
-                                    MaxWidth="150"
-                                    FontSize="25"
-                                    FontWeight="SemiBold"
-                                    Foreground="White"
-                                    Text="Вторник" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                            </StackPanel>
-                            <StackPanel
-                                Grid.Column="2"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Orientation="Vertical">
-                                <TextBlock
-                                    MaxWidth="150"
-                                    FontSize="25"
-                                    FontWeight="SemiBold"
-                                    Foreground="White"
-                                    Text="Среда" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                            </StackPanel>
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="450" />
-                                <ColumnDefinition Width="450" />
-                            </Grid.ColumnDefinitions>
-                            <StackPanel
-                                Grid.Column="0"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Orientation="Vertical">
-                                <TextBlock
-                                    MaxWidth="150"
-                                    FontSize="25"
-                                    FontWeight="SemiBold"
-                                    Foreground="White"
-                                    Text="Четверг" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                            </StackPanel>
-                            <StackPanel
-                                Grid.Column="1"
-                                HorizontalAlignment="Center"
-                                VerticalAlignment="Center"
-                                Orientation="Vertical">
-                                <TextBlock
-                                    MaxWidth="150"
-                                    FontSize="25"
-                                    FontWeight="SemiBold"
-                                    Foreground="White"
-                                    Text="Пятница" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                                <TextBlock
-                                    Margin="0,10,0,0"
-                                    FontSize="15"
-                                    Foreground="White"
-                                    Text="1. Предмет" />
-                            </StackPanel>
-                        </Grid>
-                    </Grid>
-                </Border>
-            </Grid>
-        </Border>
-    </Grid>
-</Page>
-
-
-
-
-<!--<Button
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="250" />
+                    </Grid.ColumnDefinitions>
+                    <Button
                         x:Name="BtnClose"
+                        Grid.Column="3"
                         Margin="0,15,15,0"
                         Padding="0"
                         HorizontalAlignment="Right"
                         VerticalAlignment="Top"
                         Click="BtnClose_Click"
                         Style="{StaticResource MaterialDesignIconButton}">
-    <materialDesign:PackIcon
+                        <materialDesign:PackIcon
                             Width="30"
                             Height="30"
                             Foreground="White"
                             Kind="Power" />
-</Button>
-<StackPanel
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Top"
-                        Orientation="Vertical">-->
-<!--<StackPanel Margin="0,15,0,0" Orientation="Horizontal">
-                            <materialDesign:PackIcon
-                                Width="30"
-                                Height="30"
-                                Margin="15,16,-10,0"
-                                Padding="0"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Kind="UserOutline" />
-                            <TextBlock
-                                x:Name="TBRole"
-                                Margin="15,15,0,0"
-                                Padding="0"
-                                FontSize="25"
-                                Foreground="white"
-                                Text="Role" />
-                        </StackPanel>-->
-<!--
-    <StackPanel Margin="0,15,0,0" Orientation="Horizontal">
-        <materialDesign:PackIcon
-                                Width="30"
-                                Height="30"
-                                Margin="15,16,-10,0"
-                                Padding="0"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Kind="UserOutline" />
-        <TextBlock
-                                x:Name="TBRole"
-                                Margin="15,15,0,0"
-                                Padding="0"
-                                FontSize="25"
-                                Foreground="white"
-                                Text="Role" />
-    </StackPanel>
-    <StackPanel Margin="0,-15,0,0" Orientation="Horizontal">
-        <materialDesign:PackIcon
-                                Width="30"
-                                Height="30"
-                                Margin="15,16,-10,0"
-                                Padding="0"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Kind="ConfirmationNumberOutline" />
-        <TextBlock
-                                x:Name="TBID"
-                                Margin="15,15,0,0"
-                                FontSize="25"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Text="@персональный ID" />
-    </StackPanel>
-    <StackPanel Margin="0,-15,0,0" Orientation="Horizontal">
-        <materialDesign:PackIcon
-                                Width="30"
-                                Height="30"
-                                Margin="15,16,-10,0"
-                                Padding="0"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Kind="DateRange" />
-        <TextBlock
-                                x:Name="TBInfo"
-                                Margin="15,15,0,0"
-                                FontSize="25"
-                                Foreground="{Binding ElementName=TBRole, Path=Foreground}"
-                                Text="Main info" />
-    </StackPanel>
-</StackPanel>-->
+                    </Button>
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        Margin="15"
+                        Padding="0"
+                        BorderBrush="White"
+                        BorderThickness="1"
+                        CornerRadius="15">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <ItemsControl Name="ItemsControlInfo" Margin="2,2,2,2">
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Vertical">
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon
+                                                    Width="30"
+                                                    Height="30"
+                                                    Foreground="White"
+                                                    Kind="Account" />
+                                                <TextBlock
+                                                    MaxWidth="200"
+                                                    HorizontalAlignment="Left"
+                                                    FontSize="25"
+                                                    Foreground="White"
+                                                    Text="{Binding Role.RoleName}" />
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon
+                                                    Width="30"
+                                                    Height="30"
+                                                    Foreground="White"
+                                                    Kind="BadgeAccountOutline" />
+                                                <TextBlock
+                                                    MaxWidth="200"
+                                                    HorizontalAlignment="Left"
+                                                    FontSize="25"
+                                                    Foreground="White"
+                                                    Text="{Binding FirstName}" />
+                                            </StackPanel>
+                                            <StackPanel Orientation="Horizontal">
+                                                <materialDesign:PackIcon
+                                                    Width="30"
+                                                    Height="30"
+                                                    Foreground="White"
+                                                    Kind="BadgeAccountOutline" />
+                                                <TextBlock
+                                                    MaxWidth="140"
+                                                    HorizontalAlignment="Left"
+                                                    FontSize="25"
+                                                    Foreground="White"
+                                                    Text="{Binding LastName}" />
+                                            </StackPanel>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </StackPanel>
+                    </Border>
+                    <Border
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="15"
+                        Padding="0"
+                        BorderBrush="White"
+                        BorderThickness="1"
+                        CornerRadius="15">
+                        <StackPanel
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Center"
+                            Orientation="Horizontal">
+                            <ScrollViewer VerticalScrollBarVisibility="Auto">
+                                <ItemsControl Name="ItemsControlCircle" Margin="2,2,2,2">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock
+                                                    x:Name="TextblockInfo"
+                                                    FontSize="25"
+                                                    Foreground="White"
+                                                    Text="{Binding Circle.CircleName}" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="35"
+                        FontWeight="SemiBold"
+                        Foreground="White"
+                        Text="Задание" />
+                    <Border
+                        Grid.Row="1"
+                        Margin="15"
+                        BorderBrush="White"
+                        BorderThickness="1"
+                        CornerRadius="15" />
+
+                </Grid>
+
+            </Grid>
+        </Border>
+    </Grid>
+</Page>

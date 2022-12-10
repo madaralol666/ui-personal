@@ -93,7 +93,7 @@
                             materialDesign:TextFieldAssist.HasClearButton="True"
                             materialDesign:TextFieldAssist.UnderlineBrush="AliceBlue"
                             BorderBrush="White"
-                            CaretBrush="White"
+                            CaretBrush="White"                         
                             FontSize="15"
                             Foreground="White"
                             KeyDown="TbLogin_KeyDown" />

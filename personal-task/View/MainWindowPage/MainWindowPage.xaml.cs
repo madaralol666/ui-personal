@@ -1,6 +1,7 @@
 ﻿using personal_task.Core;
 using personal_task.Model;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,9 +36,10 @@ namespace personal_task.View.MainWindowPage
             /*DataInfo.ItemsSource = FrameNavigate.DB.UserCircles.OrderBy(u => u.CircleID).ToList();*/
             /*DataInfo.ItemsSource = FrameNavigate.DB.Users.OrderBy(u => u.UserID).ToList();*/
             /*DataInfo.ItemsSource = FrameNavigate.DB.Users.Where(u => u.LastName == LastNameUser.lastName).ToList();*/
-
-
-            DataInfo.ItemsSource = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == LastNameUser.lastName).ToList();
+            /*DataCircle.ItemsSource = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == LastNameUser.lastName).ToList();
+            DataRole.ItemsSource = FrameNavigate.DB.Users.Where(u => u.LastName == LastNameUser.lastName).ToList();*/
+            ItemsControlInfo.ItemsSource = FrameNavigate.DB.Users.Where(u => u.LastName == LastNameUser.lastName).ToList();
+            ItemsControlCircle.ItemsSource = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == LastNameUser.lastName).ToList();
 
             /*Role rolemodel = FrameNavigate.DB.Roles.FirstOrDefault(u => u.RoleID == userModel.RoleID); */
 
