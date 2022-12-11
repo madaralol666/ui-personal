@@ -114,35 +114,6 @@
                             </ItemsControl>
                         </StackPanel>
                     </Border>
-                    <Border
-                        Grid.Row="0"
-                        Grid.Column="1"
-                        Margin="15"
-                        Padding="0"
-                        BorderBrush="White"
-                        BorderThickness="1"
-                        CornerRadius="15">
-                        <StackPanel
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Center"
-                            Orientation="Horizontal">
-                            <ScrollViewer VerticalScrollBarVisibility="Auto">
-                                <ItemsControl Name="ItemsControlCircle" Margin="2,2,2,2">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Horizontal">
-                                                <TextBlock
-                                                    x:Name="TextblockInfo"
-                                                    FontSize="25"
-                                                    Foreground="White"
-                                                    Text="{Binding Circle.CircleName}" />
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                            </ScrollViewer>
-                        </StackPanel>
-                    </Border>
                 </Grid>
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
@@ -155,14 +126,38 @@
                         FontWeight="SemiBold"
                         Foreground="White"
                         Text="Задание" />
-                    <Grid
-                        x:Name="GridMenu"
-                        Grid.Row="1"
-                        Width="50"
-                        HorizontalAlignment="Left"
-                        Background="red" />
-                </Grid>
+                    <StackPanel Grid.Row="1">
+                        <ListBox
+                            x:Name="LBMenu"
+                            Width="100"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Effect="{StaticResource MaterialDesignElevationShadow16}"
+                            Foreground="White"
+                            Style="{StaticResource MaterialDesignNavigationListBox}">
+                            <!--<ListBox.ItemContainerStyle>
+                                <Style>
+                                    <Style.Triggers>
+                            -->
+                            <!--<DataTrigger>
+                                            <Setter Property="is"/>
+                                        </DataTrigger>-->
+                            <!--
+                                    </Style.Triggers>
+                                </Style>
+                            </ListBox.ItemContainerStyle>-->
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock
+                                        FontSize="20"
+                                        Foreground="White"
+                                        Text="{Binding Circle.CircleName}" />
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
 
+                        </ListBox>
+                    </StackPanel>
+                </Grid>
             </Grid>
         </Border>
     </Grid>
