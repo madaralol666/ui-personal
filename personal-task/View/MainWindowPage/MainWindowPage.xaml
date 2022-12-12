@@ -118,9 +118,15 @@
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50" />
+                        <RowDefinition Height="400" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
                     <TextBlock
+                        Grid.ColumnSpan="2"
                         HorizontalAlignment="Center"
                         FontSize="35"
                         FontWeight="SemiBold"
@@ -129,23 +135,14 @@
                     <StackPanel Grid.Row="1">
                         <ListBox
                             x:Name="LBMenu"
+                            Grid.Column="0"
                             Width="100"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
                             Effect="{StaticResource MaterialDesignElevationShadow16}"
                             Foreground="White"
+                            SelectionChanged="LBMenu_SelectionChanged"
                             Style="{StaticResource MaterialDesignNavigationListBox}">
-                            <!--<ListBox.ItemContainerStyle>
-                                <Style>
-                                    <Style.Triggers>
-                            -->
-                            <!--<DataTrigger>
-                                            <Setter Property="is"/>
-                                        </DataTrigger>-->
-                            <!--
-                                    </Style.Triggers>
-                                </Style>
-                            </ListBox.ItemContainerStyle>-->
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock
@@ -154,27 +151,17 @@
                                         Text="{Binding Circle.CircleName}" />
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
-
                         </ListBox>
                     </StackPanel>
+                    <Border
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="0,0,20,100"
+                        BorderBrush="White"
+                        BorderThickness="1"
+                        CornerRadius="15" />
                 </Grid>
             </Grid>
         </Border>
     </Grid>
 </Page>
-<!--<Border
-                        Grid.Row="1"
-                        Margin="15"
-                        BorderBrush="White"
-                        BorderThickness="1"
-                        CornerRadius="15">
-
-                        <RichTextBox
-                            Height="280"
-                            Margin="15"
-                            HorizontalAlignment="Center"
-                            VerticalAlignment="Top"
-                            CaretBrush="White"
-                            FontSize="20"
-                            Foreground="White" />
-                    </Border>-->

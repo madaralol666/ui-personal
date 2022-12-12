@@ -42,5 +42,10 @@ namespace personal_task.View.MainWindowPage
                        MessageBoxButton.OK,
                        MessageBoxImage.Error);
         }
+
+        private void LBMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            
+        }
     }
 }
