@@ -45,7 +45,14 @@ namespace personal_task.View.MainWindowPage
 
         private void LBMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            List<UserCircle> circle = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == LastNameUser.lastName).ToList();
+            if (circle.Contains(LBMenu.SelectedItem))
+            {
+                            MessageBox.Show("Ошибка данных",
+                       "Системное сообщение",
+                       MessageBoxButton.OK,
+                       MessageBoxImage.Error);
+            }
         }
     }
 }
