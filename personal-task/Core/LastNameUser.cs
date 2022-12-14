@@ -9,7 +9,7 @@ namespace personal_task.Core
     public static class LastNameUser
     {
         public static string lastName { get; set; }
-        public static int userid { get; set; }
+        public static string CircleName { get; set; }
 
 
     }

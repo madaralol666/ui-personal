@@ -1,4 +1,5 @@
-﻿using System;
+﻿using personal_task.Core;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,19 @@ namespace personal_task.View.MainWindowPage
         public MainWindowUC()
         {
             InitializeComponent();
+            switch(LastNameUser.CircleName)
+            {
+                case "C#":
+                    tbCircleName.Text = "C#";
+                    break;
+                case "WPF":
+                    tbCircleName.Text = "WPF";
+                    break;
+                case "C++":
+                    tbCircleName.Text = "C++";
+                    break;
+
+            }
         }
     }
 }

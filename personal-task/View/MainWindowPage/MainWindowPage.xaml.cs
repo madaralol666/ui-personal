@@ -27,6 +27,7 @@ namespace personal_task.View.MainWindowPage
         {
             InitializeComponent();
             ItemsControlInfo.ItemsSource = FrameNavigate.DB.Users.Where(u => u.LastName == LastNameUser.lastName).ToList();
+            /*LBMenu.ItemsSource = (from u in FrameNavigate.DB.UserCircles where u.User.LastName == LastNameUser.lastName select u.Circle.CircleName).ToList();*/
             LBMenu.ItemsSource = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == LastNameUser.lastName).ToList();
         }
 
@@ -45,14 +46,29 @@ namespace personal_task.View.MainWindowPage
 
         private void LBMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            List<UserCircle> circle = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == LastNameUser.lastName).ToList();
-            if (circle.Contains(LBMenu.SelectedItem))
+            //var name = (LBMenu.SelectedItem as UserCircle).Circle.CircleName;
+            LastNameUser.CircleName = (LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim();
+            UserControl userControl = null;
+            userControl = new MainWindowUC();   
+            GridMenu.Children.Add(userControl);
+
+            /*switch ((LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim())
             {
-                            MessageBox.Show("Ошибка данных",
-                       "Системное сообщение",
-                       MessageBoxButton.OK,
-                       MessageBoxImage.Error);
-            }
+                case "C#":
+                    userControl = new MainWindowUC();
+                    GridMenu.Children.Add(userControl);
+                    break;
+                case "WPF":
+                    userControl = new MainWindowUC();
+                    GridMenu.Children.Add(userControl);
+                    break;
+                case "C++":
+                    userControl = new MainWindowUC();
+                    GridMenu.Children.Add(userControl);
+                    break;
+                default:
+                    break;
+            }*/
         }
     }
 }

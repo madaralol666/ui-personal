@@ -9,5 +9,14 @@
     d:DesignHeight="300"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid Background="red" />
+    <Grid Background="red" >
+        <TextBlock x:Name="tbCircleName"
+            Text="awdad"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   FontSize="40"
+                   Foreground="White">
+            
+        </TextBlock>
+    </Grid>
 </UserControl>

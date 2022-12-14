@@ -133,33 +133,30 @@
                         Foreground="White"
                         Text="Задание" />
                     <StackPanel Grid.Row="1">
-                        <ListView
+                        <ListBox
                             x:Name="LBMenu"
-                            Grid.Column="0"
-                            Width="100"
+                            Width="200"
                             HorizontalAlignment="Left"
                             VerticalAlignment="Center"
                             Effect="{StaticResource MaterialDesignElevationShadow16}"
                             Foreground="White"
                             SelectionChanged="LBMenu_SelectionChanged"
                             Style="{StaticResource MaterialDesignNavigationListBox}">
-                            <ListViewItem>
+                            <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <TextBlock
                                         FontSize="20"
                                         Foreground="White"
                                         Text="{Binding Circle.CircleName}" />
                                 </DataTemplate>
-                            </ListViewItem>
-                        </ListView>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
                     </StackPanel>
-                    <Border
+                    <Grid
+                        x:Name="GridMenu"
                         Grid.Row="1"
                         Grid.Column="1"
-                        Margin="0,0,20,100"
-                        BorderBrush="White"
-                        BorderThickness="1"
-                        CornerRadius="15" />
+                        Margin="0,0,20,100"/>
                 </Grid>
             </Grid>
         </Border>
