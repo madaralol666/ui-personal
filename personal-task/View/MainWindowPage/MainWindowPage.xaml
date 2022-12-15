@@ -156,7 +156,7 @@
                         x:Name="GridMenu"
                         Grid.Row="1"
                         Grid.Column="1"
-                        Margin="0,0,20,100"/>
+                        Margin="0,0,20,20"/>
                 </Grid>
             </Grid>
         </Border>

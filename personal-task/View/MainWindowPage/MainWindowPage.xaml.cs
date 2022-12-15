@@ -3,6 +3,7 @@ using personal_task.Model;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,29 +47,23 @@ namespace personal_task.View.MainWindowPage
 
         private void LBMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            //var name = (LBMenu.SelectedItem as UserCircle).Circle.CircleName;
-            LastNameUser.CircleName = (LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim();
-            UserControl userControl = null;
-            userControl = new MainWindowUC();   
-            GridMenu.Children.Add(userControl);
 
-            /*switch ((LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim())
+            //var name = (LBMenu.SelectedItem as UserCircle).Circle.CircleName;
+            if ((LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim() != null)
             {
-                case "C#":
-                    userControl = new MainWindowUC();
-                    GridMenu.Children.Add(userControl);
-                    break;
-                case "WPF":
-                    userControl = new MainWindowUC();
-                    GridMenu.Children.Add(userControl);
-                    break;
-                case "C++":
-                    userControl = new MainWindowUC();
-                    GridMenu.Children.Add(userControl);
-                    break;
-                default:
-                    break;
-            }*/
+                LastNameUser.SourceLink = $"source\\FileDescription{(LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim()}.txt";
+                if (File.Exists(LastNameUser.SourceLink) == false)
+                {
+                    LastNameUser.templink = System.IO.Path.GetDirectoryName(LastNameUser.SourceLink);
+                    Directory.CreateDirectory(LastNameUser.templink);
+                    File.Create(LastNameUser.SourceLink).Close();
+                }
+
+                GridMenu.Children.Clear();             
+
+                LastNameUser.CircleName = (LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim();
+                FrameNavigate.objectFrame.Navigate(new MainWindowUC());
+            }
         }
     }
 }
