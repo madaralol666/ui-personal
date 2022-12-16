@@ -156,7 +156,64 @@
                         x:Name="GridMenu"
                         Grid.Row="1"
                         Grid.Column="1"
-                        Margin="0,0,20,20"/>
+                        Margin="0,0,20,20">
+                        <Border
+            Margin="0,0,0,50"
+            BorderBrush="White"
+            BorderThickness="2"
+            CornerRadius="15">
+                            <TextBox
+                x:Name="tbcircle"
+                Margin="10"
+                Padding="0"
+                materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
+                CaretBrush="White"
+                FontSize="20"
+                Foreground="White"
+                TextWrapping="Wrap"
+                TextChanged="tbcircle_TextChanged"/>
+                        </Border>
+                        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                            <Button
+                x:Name="BtnFile"
+                Margin="0,0,10,0"
+                VerticalAlignment="Bottom"
+                materialDesign:ButtonAssist.CornerRadius="5"
+                Background="Transparent"
+                BorderBrush="White"
+                BorderThickness="2"
+                Click="BtnFile_Click"
+                Effect="{StaticResource MaterialDesignElevationShadow16}">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                        Margin="0,2,0,0"
+                        Foreground="White"
+                        Kind="Upload" />
+
+                                    <TextBlock Foreground="White" Text="Загрузить файл" />
+                                </StackPanel>
+                            </Button>
+                            <Button
+                x:Name="BtnPublish"
+                Margin="0,0,10,0"
+                VerticalAlignment="Bottom"
+                materialDesign:ButtonAssist.CornerRadius="5"
+                Background="Transparent"
+                BorderBrush="White"
+                BorderThickness="2"
+                Click="BtnPublish_Click"
+                Effect="{StaticResource MaterialDesignElevationShadow16}">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                        Margin="0,2,0,0"
+                        Foreground="White"
+                        Kind="Publish" />
+
+                                    <TextBlock Foreground="White" Text="Публиковать" />
+                                </StackPanel>
+                            </Button>
+                        </StackPanel>
+                    </Grid>
                 </Grid>
             </Grid>
         </Border>
