@@ -26,6 +26,7 @@
                     <GradientStop Offset="1" Color="#FF00CAFF" />
                 </LinearGradientBrush>
             </Border.Background>
+
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="100" />
@@ -93,10 +94,24 @@
                             materialDesign:TextFieldAssist.HasClearButton="True"
                             materialDesign:TextFieldAssist.UnderlineBrush="AliceBlue"
                             BorderBrush="White"
-                            CaretBrush="White"                         
+                            CaretBrush="White"
                             FontSize="15"
                             Foreground="White"
-                            KeyDown="TbLogin_KeyDown" />
+                            KeyDown="TbLogin_KeyDown">
+                            <TextBox.Resources>
+                                <SolidColorBrush x:Key="MaterialDesignToolForeground" Color="White" />
+                            </TextBox.Resources>
+                        </TextBox>
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Center">
+                        <CheckBox
+                            Margin="13,10,0,0"
+                            Background="White"
+                            BorderThickness="6"
+                            Content="Запомнить меня"
+                            FontSize="15"
+                            Foreground="White"
+                            Style="{StaticResource MaterialDesignLightCheckBox}" />
                     </StackPanel>
                     <StackPanel Orientation="Horizontal">
                         <Button

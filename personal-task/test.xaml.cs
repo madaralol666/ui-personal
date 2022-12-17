@@ -23,6 +23,7 @@ namespace personal_task
         public test()
         {
             InitializeComponent();
+            /*LBMenu.ItemsSource = (from u in FrameNavigate.DB.UserCircles where u.User.LastName == LastNameUser.lastName select u.Circle.CircleName).ToList();*/
         }
     }
 }

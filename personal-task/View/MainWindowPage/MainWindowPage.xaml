@@ -118,27 +118,31 @@
                 <Grid Grid.Row="1">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="50" />
-                        <RowDefinition Height="400" />
+                        <RowDefinition Height="300" />
                         <RowDefinition Height="*" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="130" />
                         <ColumnDefinition Width="*" />
                     </Grid.ColumnDefinitions>
                     <TextBlock
+                        x:Name="tbCircleName"
                         Grid.ColumnSpan="2"
                         HorizontalAlignment="Center"
                         FontSize="35"
                         FontWeight="SemiBold"
                         Foreground="White"
                         Text="Задание" />
-                    <StackPanel Grid.Row="1">
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center">
                         <ListBox
                             x:Name="LBMenu"
-                            Width="200"
-                            HorizontalAlignment="Left"
-                            VerticalAlignment="Center"
-                            Effect="{StaticResource MaterialDesignElevationShadow16}"
+                            Width="130"
+                            Padding="0"
+                            Effect="{StaticResource MaterialDesignElevationShadow12}"
                             Foreground="White"
                             SelectionChanged="LBMenu_SelectionChanged"
                             Style="{StaticResource MaterialDesignNavigationListBox}">
@@ -147,7 +151,8 @@
                                     <TextBlock
                                         FontSize="20"
                                         Foreground="White"
-                                        Text="{Binding Circle.CircleName}" />
+                                        Text="{Binding Circle.CircleName}"
+                                        TextAlignment="Center" />
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
@@ -156,64 +161,84 @@
                         x:Name="GridMenu"
                         Grid.Row="1"
                         Grid.Column="1"
-                        Margin="0,0,20,20">
+                        Margin="0,0,20,0">
                         <Border
-            Margin="0,0,0,50"
-            BorderBrush="White"
-            BorderThickness="2"
-            CornerRadius="15">
+                            BorderBrush="White"
+                            BorderThickness="2"
+                            CornerRadius="15">
                             <TextBox
-                x:Name="tbcircle"
-                Margin="10"
-                Padding="0"
-                materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
-                CaretBrush="White"
-                FontSize="20"
-                Foreground="White"
-                TextWrapping="Wrap"
-                TextChanged="tbcircle_TextChanged"/>
+                                x:Name="tbcircle"
+                                Margin="10"
+                                Padding="0"
+                                materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
+                                CaretBrush="White"
+                                FontSize="20"
+                                Foreground="White"
+                                IsEnabled="False"
+                                TextChanged="tbcircle_TextChanged"
+                                TextWrapping="Wrap" />
                         </Border>
-                        <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
-                            <Button
-                x:Name="BtnFile"
-                Margin="0,0,10,0"
-                VerticalAlignment="Bottom"
-                materialDesign:ButtonAssist.CornerRadius="5"
-                Background="Transparent"
-                BorderBrush="White"
-                BorderThickness="2"
-                Click="BtnFile_Click"
-                Effect="{StaticResource MaterialDesignElevationShadow16}">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon
-                        Margin="0,2,0,0"
-                        Foreground="White"
-                        Kind="Upload" />
-
-                                    <TextBlock Foreground="White" Text="Загрузить файл" />
-                                </StackPanel>
-                            </Button>
-                            <Button
-                x:Name="BtnPublish"
-                Margin="0,0,10,0"
-                VerticalAlignment="Bottom"
-                materialDesign:ButtonAssist.CornerRadius="5"
-                Background="Transparent"
-                BorderBrush="White"
-                BorderThickness="2"
-                Click="BtnPublish_Click"
-                Effect="{StaticResource MaterialDesignElevationShadow16}">
-                                <StackPanel Orientation="Horizontal">
-                                    <materialDesign:PackIcon
-                        Margin="0,2,0,0"
-                        Foreground="White"
-                        Kind="Publish" />
-
-                                    <TextBlock Foreground="White" Text="Публиковать" />
-                                </StackPanel>
-                            </Button>
-                        </StackPanel>
                     </Grid>
+                    <StackPanel
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Orientation="Horizontal">
+                        <Button
+                            Visibility="Collapsed"
+                            x:Name="BtnOpen"
+                            Height="60"
+                            Margin="0,20,20,0"
+                            VerticalAlignment="Bottom"
+                            materialDesign:ButtonAssist.CornerRadius="5"
+                            Background="Transparent"
+                            BorderBrush="White"
+                            BorderThickness="2"
+                            Click="BtnOpen_Click"
+                            Effect="{StaticResource MaterialDesignElevationShadow16}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon
+                                    Margin="0 -5"
+                                    Foreground="White"
+                                    Kind="OpenInApp"
+                                    Height="30"
+                                    Width="30"/>
+
+                                <TextBlock
+                                    FontSize="20"
+                                    Foreground="White"
+                                    Text="Открыть файл" />
+                            </StackPanel>
+                        </Button>
+                        <Button
+                            Visibility="Collapsed"
+                            x:Name="BtnFile"
+                            Height="60"
+                            Margin="0,20,20,0"
+                            VerticalAlignment="Bottom"
+                            materialDesign:ButtonAssist.CornerRadius="5"
+                            Background="Transparent"
+                            BorderBrush="White"
+                            BorderThickness="2"
+                            Click="BtnFile_Click"
+                            Effect="{StaticResource MaterialDesignElevationShadow16}">
+                            <StackPanel Orientation="Horizontal">
+                                <materialDesign:PackIcon
+                                    Margin="0 -5"
+                                    Foreground="White"
+                                    Kind="Upload"
+                                    Height="30"
+                                    Width="30"/>
+
+                                <TextBlock
+                                    x:Name="Btntext"
+                                    FontSize="20"
+                                    Foreground="White"
+                                    Text="Загрузить файл" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
                 </Grid>
             </Grid>
         </Border>

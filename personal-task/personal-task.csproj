@@ -108,9 +108,6 @@
     <Compile Include="View\MainWindowPage\MainWindowPage.xaml.cs">
       <DependentUpon>MainWindowPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\MainWindowPage\MainWindowUC.xaml.cs">
-      <DependentUpon>MainWindowUC.xaml</DependentUpon>
-    </Compile>
     <Page Include="test.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -136,10 +133,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\MainWindowPage\MainWindowPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\MainWindowPage\MainWindowUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

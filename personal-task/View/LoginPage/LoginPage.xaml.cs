@@ -42,6 +42,7 @@ namespace personal_task.View.LoginPage
                 if (userModel != null)
                 {
                     LastNameUser.lastName = TbLogin.Text;
+                    LastNameUser.RoleName = userModel.Role.RoleName.Trim();
                     FrameNavigate.objectFrame.Navigate(new MainWindowPage1());
 
                 }
