@@ -186,7 +186,6 @@
                         VerticalAlignment="Top"
                         Orientation="Horizontal">
                         <Button
-                            Visibility="Collapsed"
                             x:Name="BtnOpen"
                             Height="60"
                             Margin="0,20,20,0"
@@ -196,14 +195,15 @@
                             BorderBrush="White"
                             BorderThickness="2"
                             Click="BtnOpen_Click"
-                            Effect="{StaticResource MaterialDesignElevationShadow16}">
+                            Effect="{StaticResource MaterialDesignElevationShadow16}"
+                            Visibility="Collapsed">
                             <StackPanel Orientation="Horizontal">
                                 <materialDesign:PackIcon
-                                    Margin="0 -5"
-                                    Foreground="White"
-                                    Kind="OpenInApp"
+                                    Width="30"
                                     Height="30"
-                                    Width="30"/>
+                                    Margin="0,-5"
+                                    Foreground="White"
+                                    Kind="OpenInApp" />
 
                                 <TextBlock
                                     FontSize="20"
@@ -211,33 +211,38 @@
                                     Text="Открыть файл" />
                             </StackPanel>
                         </Button>
-                        <Button
-                            Visibility="Collapsed"
-                            x:Name="BtnFile"
-                            Height="60"
-                            Margin="0,20,20,0"
-                            VerticalAlignment="Bottom"
-                            materialDesign:ButtonAssist.CornerRadius="5"
-                            Background="Transparent"
-                            BorderBrush="White"
-                            BorderThickness="2"
-                            Click="BtnFile_Click"
-                            Effect="{StaticResource MaterialDesignElevationShadow16}">
-                            <StackPanel Orientation="Horizontal">
-                                <materialDesign:PackIcon
-                                    Margin="0 -5"
-                                    Foreground="White"
-                                    Kind="Upload"
-                                    Height="30"
-                                    Width="30"/>
+                        <Border
+                            x:Name="borderdrop"
+                            AllowDrop="True"
+                            Drop="borderdrop_Drop">
+                            <Button
+                                x:Name="BtnFile"
+                                Height="60"
+                                Margin="0,20,20,0"
+                                VerticalAlignment="Bottom"
+                                materialDesign:ButtonAssist.CornerRadius="5"
+                                Background="Transparent"
+                                BorderBrush="White"
+                                BorderThickness="2"
+                                Click="BtnFile_Click"
+                                Effect="{StaticResource MaterialDesignElevationShadow16}"
+                                Visibility="Collapsed">
+                                <StackPanel Orientation="Horizontal">
+                                    <materialDesign:PackIcon
+                                        Width="30"
+                                        Height="30"
+                                        Margin="0,-5"
+                                        Foreground="White"
+                                        Kind="Upload" />
 
-                                <TextBlock
-                                    x:Name="Btntext"
-                                    FontSize="20"
-                                    Foreground="White"
-                                    Text="Загрузить файл" />
-                            </StackPanel>
-                        </Button>
+                                    <TextBlock
+                                        x:Name="Btntext"
+                                        FontSize="20"
+                                        Foreground="White"
+                                        Text="Загрузить файл" />
+                                </StackPanel>
+                            </Button>
+                        </Border>
                     </StackPanel>
                 </Grid>
             </Grid>

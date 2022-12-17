@@ -18,7 +18,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace personal_task.View.MainWindowPage
 {
@@ -30,8 +29,7 @@ namespace personal_task.View.MainWindowPage
         public MainWindowPage1()
         {
             InitializeComponent();
-            ItemsControlInfo.ItemsSource = FrameNavigate.DB.Users.Where(u => u.LastName == LastNameUser.lastName).ToList();
-            /*LBMenu.ItemsSource = (from u in FrameNavigate.DB.UserCircles where u.User.LastName == LastNameUser.lastName select u.Circle.CircleName).ToList();*/
+            ItemsControlInfo.ItemsSource = FrameNavigate.DB.Users.Where(u => u.LastName == LastNameUser.lastName).ToList();            
             LBMenu.ItemsSource = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == LastNameUser.lastName).ToList();
 
             if (LastNameUser.RoleName == "Student")
@@ -76,14 +74,14 @@ namespace personal_task.View.MainWindowPage
                 LastNameUser.CircleName = (LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim();
                 tbCircleName.Text = $"Задание {LastNameUser.CircleName}";
                 StreamReader streamReader = new StreamReader(LastNameUser.SourceLink);
-                string test = streamReader.ReadToEnd();
+                var SRlines = streamReader.ReadToEnd();
                 streamReader.Close();
-                tbcircle.Text = test;
+                tbcircle.Text = SRlines;
 
                 LastNameUser.listOffile = Directory.GetFiles("Source");
                 foreach (string stringOffile in LastNameUser.listOffile)
                 {
-                    if (stringOffile.Contains($"{LastNameUser.CircleName}File_"))
+                    if (stringOffile.Contains($"{LastNameUser.CircleName}_File"))
                     {
                         BtnOpen.Visibility = Visibility.Visible;
                         LastNameUser.stringoffile = stringOffile;
@@ -112,83 +110,43 @@ namespace personal_task.View.MainWindowPage
                 SWCSharp.Close();
 
             }
-/*            switch (LastNameUser.CircleName)
-            {
-                case "C#":
-                    if (File.Exists(LastNameUser.SourceLink))
-                    {
-
-                        LastNameUser.templink = System.IO.Path.GetDirectoryName(LastNameUser.SourceLink);
-                        Directory.CreateDirectory(LastNameUser.templink);
-                        File.Create(LastNameUser.SourceLink).Close();
-
-                        StreamWriter SWCSharp = new StreamWriter(LastNameUser.SourceLink, true);
-                        SWCSharp.WriteLine(String.Format(rtbox));
-                        SWCSharp.Close();
-                    }
-                    break;
-                case "WPF":
-                    if (File.Exists(LastNameUser.SourceLink))
-                    {
-
-                        LastNameUser.templink = System.IO.Path.GetDirectoryName(LastNameUser.SourceLink);
-                        Directory.CreateDirectory(LastNameUser.templink);
-                        File.Create(LastNameUser.SourceLink).Close();
-
-                        StreamWriter SWCpp = new StreamWriter(LastNameUser.SourceLink, true);
-                        SWCpp.WriteLine(String.Format(rtbox));
-                        SWCpp.Close();
-                    }
-                    break;
-                case "C++":
-                    if (File.Exists(LastNameUser.SourceLink))
-                    {
-
-                        LastNameUser.templink = System.IO.Path.GetDirectoryName(LastNameUser.SourceLink);
-                        Directory.CreateDirectory(LastNameUser.templink);
-                        File.Create(LastNameUser.SourceLink).Close();
-
-                        StreamWriter SWcpp = new StreamWriter(LastNameUser.SourceLink, true);
-                        SWcpp.WriteLine(String.Format(rtbox));
-                        SWcpp.Close();
-
-                    }
-                    break;
-
-
-            }*/
         }
 
         private void BtnFile_Click(object sender, RoutedEventArgs e)
         {
-            foreach (string stringOflist in LastNameUser.listOffile)
-            {
-                if (stringOflist.Contains($"{LastNameUser.CircleName}File_"))
-                {
-                    File.Delete(stringOflist);
-                    BtnOpen.Visibility = Visibility.Visible;
-                }
-                else
-                {
-                    BtnOpen.Visibility = Visibility.Visible;
-                }
-            }
 
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.Multiselect = false;
             openFileDialog.Filter = "Files (*.DOCX;*.DOCM;*.DOTX;*.DOTM)|*.DOCX;*.DOCM;*.DOTX;*.DOTM";
             if (openFileDialog.ShowDialog() == true)
             {
-                LastNameUser.FileLink  = $"Source\\{LastNameUser.CircleName}File_{openFileDialog.SafeFileName}";
+                LastNameUser.FileLink  = $"Source\\{LastNameUser.CircleName}_File{Path.GetExtension(openFileDialog.SafeFileName)}";
                 File.Copy(openFileDialog.FileName, LastNameUser.FileLink);
                 LastNameUser.stringoffile = LastNameUser.FileLink;
             }
+            BtnOpen.Visibility = Visibility.Visible;
 
         }
 
         private void BtnOpen_Click(object sender, RoutedEventArgs e)
         {
             Process.Start(LastNameUser.stringoffile);
+        }
+
+        private void borderdrop_Drop(object sender, DragEventArgs e)
+        {
+            try
+            {               
+                string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
+                LastNameUser.FileLink = $"Source\\{LastNameUser.CircleName}_File{Path.GetExtension(files[0])}";
+                File.Copy(files[0], LastNameUser.FileLink);
+                LastNameUser.stringoffile = LastNameUser.FileLink;
+                BtnOpen.Visibility = Visibility.Visible;
+            }
+            catch (Exception)
+            {
+                return;
+            }
         }
     }
 }
