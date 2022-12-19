@@ -27,6 +27,7 @@ namespace personal_task.View.LoginPage
         {
             InitializeComponent();
             User userModel = FrameNavigate.DB.Users.FirstOrDefault(u => u.LastName == TbLogin.Text);
+            TbLogin.Text = Properties.Settings.Default.RememberMe;
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
@@ -75,6 +76,32 @@ namespace personal_task.View.LoginPage
             if (e.Key == Key.Enter)
             {
                 BtnLogin_Click(sender, e);
+            }
+        }
+
+        private void BtnRembMe_Click(object sender, RoutedEventArgs e)
+        {
+            if (TbLogin.Text == string.Empty)
+            {
+                MessageBox.Show("Заполните Поле",
+                            "Системное сообщение",
+                            MessageBoxButton.OK,
+                            MessageBoxImage.Information);
+                BtnRembMe.IsChecked = false;
+            }            
+        }
+
+        private void TbLogin_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (BtnRembMe.IsChecked == true)
+            {
+                Properties.Settings.Default.RememberMe = TbLogin.Text;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.RememberMe = string.Empty;
+                Properties.Settings.Default.Save();
             }
         }
     }

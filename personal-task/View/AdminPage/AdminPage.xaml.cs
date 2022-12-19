@@ -29,8 +29,7 @@ namespace personal_task.View.AdminPage
 
         private void MenuItemUser_Click(object sender, RoutedEventArgs e)
         {
-            GridMenuLoad.Children.Clear();
-            GridMenuLoad.Children.Add(new UserUC());
+
         }
 
         private void MenuItemUerCircle_Click(object sender, RoutedEventArgs e)

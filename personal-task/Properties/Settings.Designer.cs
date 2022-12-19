@@ -26,12 +26,24 @@ namespace personal_task.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SafeFileName {
+        public string RememberMe {
             get {
-                return ((string)(this["SafeFileName"]));
+                return ((string)(this["RememberMe"]));
             }
             set {
-                this["SafeFileName"] = value;
+                this["RememberMe"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool Checked {
+            get {
+                return ((bool)(this["Checked"]));
+            }
+            set {
+                this["Checked"] = value;
             }
         }
     }

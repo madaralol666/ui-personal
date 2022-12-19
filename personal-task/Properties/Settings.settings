@@ -2,8 +2,11 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="personal_task.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="SafeFileName" Type="System.String" Scope="User">
+    <Setting Name="RememberMe" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Checked" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

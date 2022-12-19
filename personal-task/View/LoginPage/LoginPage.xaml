@@ -97,6 +97,7 @@
                             CaretBrush="White"
                             FontSize="15"
                             Foreground="White"
+                            TextChanged="TbLogin_TextChanged"
                             KeyDown="TbLogin_KeyDown">
                             <TextBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignToolForeground" Color="White" />
@@ -105,9 +106,11 @@
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center">
                         <CheckBox
+                            Name="BtnRembMe"
                             Margin="13,10,0,0"
                             Background="White"
                             BorderThickness="6"
+                            Click="BtnRembMe_Click"
                             Content="Запомнить меня"
                             FontSize="15"
                             Foreground="White"
@@ -138,7 +141,11 @@
 
                         </Button>
                     </StackPanel>
-
+                </StackPanel>
+                <StackPanel Grid.Row="3">
+                    <materialDesign:Snackbar x:Name="SnackbarFive" HorizontalAlignment="Stretch">
+                        <materialDesign:SnackbarMessage ActionContent="OK" Content="Заполните поле" />
+                    </materialDesign:Snackbar>
                 </StackPanel>
             </Grid>
         </Border>

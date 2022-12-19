@@ -1,12 +1,14 @@
-﻿<UserControl x:Class="personal_task.View.AdminPage.AdminUC.UserCircleUC"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:local="clr-namespace:personal_task.View.AdminPage.AdminUC"
-             mc:Ignorable="d" 
-             d:DesignHeight="550" d:DesignWidth="1000">
+﻿<UserControl
+    x:Class="personal_task.View.AdminPage.AdminUC.UserCircleUC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:personal_task.View.AdminPage.AdminUC"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="550"
+    d:DesignWidth="1000"
+    mc:Ignorable="d">
     <UserControl.Resources>
         <CollectionViewSource x:Key="envVariables" Source="{Binding Variables}">
             <CollectionViewSource.GroupDescriptions>
@@ -32,7 +34,7 @@
                 CanUserSortColumns="False"
                 ColumnHeaderHeight="50"
                 Effect="{StaticResource MaterialDesignElevationShadow16}"
-                FontSize="15"
+                FontSize="25"
                 GridLinesVisibility="None"
                 IsReadOnly="True"
                 RowBackground="Transparent">
@@ -51,11 +53,11 @@
                     </Style>
                 </DataGrid.Resources>
                 <DataGrid.Columns>
-                    
-                    <DataGridTextColumn 
+
+                    <DataGridTextColumn
                         Width="Auto"
                         Binding="{Binding User.LastName}"
-                        FontSize="15"
+                        FontSize="25"
                         Foreground="White">
                         <DataGridTextColumn.Header>
                             <TextBlock Foreground="White" Text="Имя" />
@@ -64,7 +66,7 @@
                     <DataGridTextColumn
                         Width="Auto"
                         Binding="{Binding User.Role.RoleName}"
-                        FontSize="15"
+                        FontSize="25"
                         Foreground="White">
                         <DataGridTextColumn.Header>
                             <TextBlock Foreground="White" Text="Роль" />
@@ -73,7 +75,7 @@
                     <DataGridTextColumn
                         Width="Auto"
                         Binding="{Binding Circle.CircleName}"
-                        FontSize="15"
+                        FontSize="25"
                         Foreground="White">
                         <DataGridTextColumn.Header>
                             <TextBlock Foreground="White" Text="Имя кружка" />
@@ -91,7 +93,7 @@
                                     Style="{StaticResource MaterialDesignFlatLightButton}"
                                     ToolTip="Удалить заказ">
                                     <StackPanel Orientation="Horizontal">
-                                        <materialDesign:PackIcon Kind="Remove"/>
+                                        <materialDesign:PackIcon Kind="Remove" />
                                     </StackPanel>
                                 </Button>
                             </DataTemplate>
