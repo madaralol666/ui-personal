@@ -66,9 +66,9 @@ namespace personal_task.View.MainWindowPage
                 
                 if (File.Exists(LastNameUser.SourceLink) == false)
                 {
-                    LastNameUser.templink = System.IO.Path.GetDirectoryName(LastNameUser.SourceLink);
-                    Directory.CreateDirectory(LastNameUser.templink);
-                    File.Create(LastNameUser.SourceLink).Close();
+                        LastNameUser.templink = Path.GetDirectoryName(LastNameUser.SourceLink);
+                        Directory.CreateDirectory(LastNameUser.templink);
+                        File.Create(LastNameUser.SourceLink).Close();
                 }
 
                 LastNameUser.CircleName = (LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim();

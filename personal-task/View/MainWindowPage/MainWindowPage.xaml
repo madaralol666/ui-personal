@@ -226,7 +226,7 @@
                                 BorderThickness="2"
                                 Click="BtnFile_Click"
                                 Effect="{StaticResource MaterialDesignElevationShadow16}"
-                                Visibility="Collapsed">
+                                Visibility="Collapsed"> 
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon
                                         Width="30"

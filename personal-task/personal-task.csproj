@@ -105,10 +105,31 @@
     <Compile Include="test.xaml.cs">
       <DependentUpon>test.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\AdminPage\AdminPage.xaml.cs">
+      <DependentUpon>AdminPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminPage\AdminUC\UserCircleUC.xaml.cs">
+      <DependentUpon>UserCircleUC.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\AdminPage\AdminUC\UserUC.xaml.cs">
+      <DependentUpon>UserUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainWindowPage\MainWindowPage.xaml.cs">
       <DependentUpon>MainWindowPage.xaml</DependentUpon>
     </Compile>
     <Page Include="test.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminPage\AdminPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminPage\AdminUC\UserCircleUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\AdminPage\AdminUC\UserUC.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -1,0 +1,80 @@
+﻿<Page x:Class="personal_task.View.AdminPage.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:local="clr-namespace:personal_task.View.AdminPage"
+      mc:Ignorable="d" 
+    d:DesignHeight="600"
+    d:DesignWidth="1000"
+      FontFamily="Consolas">
+
+    <Grid>
+
+        <Border
+            Width="1000"
+            Height="600"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            CornerRadius="25"
+            Effect="{StaticResource MaterialDesignElevationShadow12}">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                    <GradientStop Color="#FF81D2E8" />
+                    <GradientStop Offset="1" Color="#FF00CAFF" />
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0">
+                <StackPanel Orientation="Horizontal">
+                    <Menu
+                Style="{DynamicResource MaterialDesignMenu}">
+                        <MenuItem
+                            x:Name="MenuItemUser"
+                            HorizontalAlignment="Center"
+                            Click="MenuItemUser_Click"
+                            Cursor="Hand"
+                            Foreground="White"
+                            FontSize="20"
+                            Effect="{StaticResource MaterialDesignShadowDepth3}"
+                            Header="Информация о пользователях"/>
+                        <MenuItem
+                            x:Name="MenuItemUserCircle"
+                            HorizontalAlignment="Center"
+                            Click="MenuItemUerCircle_Click"
+                            Cursor="Hand"
+                            FontSize="20"
+                            Foreground="White"
+                            Effect="{StaticResource MaterialDesignShadowDepth3}"
+                            Header="Кружки"/>
+                    </Menu>
+                        <Button
+                        x:Name="BtnClose"
+                            Margin="515 15 15 0"
+                        Padding="0"
+                        HorizontalAlignment="Right"
+                        VerticalAlignment="Top"
+                        Click="BtnClose_Click"
+                        Style="{StaticResource MaterialDesignIconButton}">
+                            <materialDesign:PackIcon
+                            Width="30"
+                            Height="30"
+                            Foreground="White"
+                            Kind="Power" />
+                        </Button>
+                    </StackPanel>
+                    
+            </Border>
+                <Grid Name="GridMenuLoad"
+                      Grid.Row="1"
+                      Margin="5">
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Page>
