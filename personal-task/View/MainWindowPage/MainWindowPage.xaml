@@ -170,7 +170,6 @@
                                 x:Name="tbcircle"
                                 Margin="10"
                                 Padding="0"
-                                materialDesign:ScrollViewerAssist.IsAutoHideEnabled="True"
                                 CaretBrush="White"
                                 FontSize="20"
                                 Foreground="White"
@@ -226,7 +225,7 @@
                                 BorderThickness="2"
                                 Click="BtnFile_Click"
                                 Effect="{StaticResource MaterialDesignElevationShadow16}"
-                                Visibility="Collapsed"> 
+                                Visibility="Collapsed">
                                 <StackPanel Orientation="Horizontal">
                                     <materialDesign:PackIcon
                                         Width="30"

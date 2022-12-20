@@ -1,14 +1,15 @@
-﻿<Page x:Class="personal_task.View.AdminPage.AdminPage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-      xmlns:local="clr-namespace:personal_task.View.AdminPage"
-      mc:Ignorable="d" 
+﻿<Page
+    x:Class="personal_task.View.AdminPage.AdminPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:personal_task.View.AdminPage"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     d:DesignHeight="600"
     d:DesignWidth="1000"
-      FontFamily="Consolas">
+    FontFamily="Consolas"
+    mc:Ignorable="d">
 
     <Grid>
 
@@ -27,53 +28,44 @@
             </Border.Background>
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Border Grid.Row="0">
-                <StackPanel Orientation="Horizontal">
-                    <Menu
-                Style="{DynamicResource MaterialDesignMenu}">
-                        <MenuItem
-                            x:Name="MenuItemUser"
-                            HorizontalAlignment="Center"
-                            Click="MenuItemUser_Click"
-                            Cursor="Hand"
-                            Foreground="White"
-                            FontSize="20"
-                            Effect="{StaticResource MaterialDesignShadowDepth3}"
-                            Header="Информация о пользователях"/>
-                        <MenuItem
-                            x:Name="MenuItemUserCircle"
-                            HorizontalAlignment="Center"
-                            Click="MenuItemUerCircle_Click"
-                            Cursor="Hand"
-                            FontSize="20"
-                            Foreground="White"
-                            Effect="{StaticResource MaterialDesignShadowDepth3}"
-                            Header="Кружки"/>
-                    </Menu>
+                    <StackPanel Orientation="Horizontal">
+                        <Menu Style="{DynamicResource MaterialDesignMenu}">
+                            <MenuItem
+                                x:Name="MenuItemUserCircle"
+                                Margin="15"
+                                HorizontalAlignment="Center"
+                                Click="MenuItemUerCircle_Click"
+                                Cursor="Hand"
+                                Effect="{StaticResource MaterialDesignShadowDepth3}"
+                                FontSize="20"
+                                Foreground="White"
+                                Header="Кружки" />
+                        </Menu>
                         <Button
-                        x:Name="BtnClose"
-                            Margin="515 15 15 0"
-                        Padding="0"
-                        HorizontalAlignment="Right"
-                        VerticalAlignment="Top"
-                        Click="BtnClose_Click"
-                        Style="{StaticResource MaterialDesignIconButton}">
+                            x:Name="BtnClose"
+                            Margin="800,15,15,0"
+                            Padding="0"
+                            HorizontalAlignment="Right"
+                            VerticalAlignment="Top"
+                            Click="BtnClose_Click"
+                            Style="{StaticResource MaterialDesignIconButton}">
                             <materialDesign:PackIcon
-                            Width="30"
-                            Height="30"
-                            Foreground="White"
-                            Kind="Power" />
+                                Width="30"
+                                Height="30"
+                                Foreground="White"
+                                Kind="Power" />
                         </Button>
                     </StackPanel>
-                    
-            </Border>
-                <Grid Name="GridMenuLoad"
-                      Grid.Row="1"
-                      Margin="5">
-                </Grid>
+
+                </Border>
+                <Grid
+                    Name="GridMenuLoad"
+                    Grid.Row="1"
+                    Margin="5" />
             </Grid>
         </Border>
     </Grid>
