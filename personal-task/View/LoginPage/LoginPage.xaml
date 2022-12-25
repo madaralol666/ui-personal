@@ -97,7 +97,6 @@
                             CaretBrush="White"
                             FontSize="15"
                             Foreground="White"
-                            TextChanged="TbLogin_TextChanged"
                             KeyDown="TbLogin_KeyDown">
                             <TextBox.Resources>
                                 <SolidColorBrush x:Key="MaterialDesignToolForeground" Color="White" />

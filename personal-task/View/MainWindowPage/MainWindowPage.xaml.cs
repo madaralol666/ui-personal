@@ -29,10 +29,10 @@ namespace personal_task.View.MainWindowPage
         public MainWindowPage1()
         {
             InitializeComponent();
-            ItemsControlInfo.ItemsSource = FrameNavigate.DB.Users.Where(u => u.LastName == LastNameUser.lastName).ToList();            
-            LBMenu.ItemsSource = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == LastNameUser.lastName).ToList();
+            ItemsControlInfo.ItemsSource = FrameNavigate.DB.Users.Where(u => u.LastName == Transfer.lastName).ToList();            
+            LBMenu.ItemsSource = FrameNavigate.DB.UserCircles.Where(u => u.User.LastName == Transfer.lastName).ToList();
 
-            if (LastNameUser.RoleName == "Student")
+            if (Transfer.RoleName == "Student")
             {
                 BtnFile.IsEnabled = false;
                 BtnFile.Visibility = Visibility.Collapsed;
@@ -56,35 +56,35 @@ namespace personal_task.View.MainWindowPage
         private void LBMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             tbcircle.IsEnabled= true;
-            if (LastNameUser.RoleName != "Student")
+            if (Transfer.RoleName != "Student")
             {
                 BtnFile.Visibility = Visibility.Visible;
             }
             if ((LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim() != null)
             {
-                LastNameUser.SourceLink = $"source\\FileDescription{(LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim()}.txt";
+                Transfer.SourceLink = $"source\\FileDescription{(LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim()}.txt";
                 
-                if (File.Exists(LastNameUser.SourceLink) == false)
+                if (File.Exists(Transfer.SourceLink) == false)
                 {
-                        LastNameUser.templink = Path.GetDirectoryName(LastNameUser.SourceLink);
-                        Directory.CreateDirectory(LastNameUser.templink);
-                        File.Create(LastNameUser.SourceLink).Close();
+                        Transfer.templink = Path.GetDirectoryName(Transfer.SourceLink);
+                        Directory.CreateDirectory(Transfer.templink);
+                        File.Create(Transfer.SourceLink).Close();
                 }
 
-                LastNameUser.CircleName = (LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim();
-                tbCircleName.Text = $"Задание {LastNameUser.CircleName}";
-                StreamReader streamReader = new StreamReader(LastNameUser.SourceLink);
+                Transfer.CircleName = (LBMenu.SelectedItem as UserCircle).Circle.CircleName.Trim();
+                tbCircleName.Text = $"Задание {Transfer.CircleName}";
+                StreamReader streamReader = new StreamReader(Transfer.SourceLink);
                 var SRlines = streamReader.ReadToEnd();
                 streamReader.Close();
                 tbcircle.Text = SRlines;
 
-                LastNameUser.listOffile = Directory.GetFiles("Source");
-                foreach (string stringOffile in LastNameUser.listOffile)
+                Transfer.listOffile = Directory.GetFiles("Source");
+                foreach (string stringOffile in Transfer.listOffile)
                 {
-                    if (stringOffile.Contains($"{LastNameUser.CircleName}_File"))
+                    if (stringOffile.Contains($"{Transfer.CircleName}_File"))
                     {
                         BtnOpen.Visibility = Visibility.Visible;
-                        LastNameUser.stringoffile = stringOffile;
+                        Transfer.stringoffile = stringOffile;
                         break;
                     }
                     else
@@ -99,13 +99,13 @@ namespace personal_task.View.MainWindowPage
         private void tbcircle_TextChanged(object sender, TextChangedEventArgs e)
         {
             string rtbox = tbcircle.Text;
-            if (File.Exists(LastNameUser.SourceLink))
+            if (File.Exists(Transfer.SourceLink))
             {
-                LastNameUser.templink = System.IO.Path.GetDirectoryName(LastNameUser.SourceLink);
-                Directory.CreateDirectory(LastNameUser.templink);
-                File.Create(LastNameUser.SourceLink).Close();
+                Transfer.templink = System.IO.Path.GetDirectoryName(Transfer.SourceLink);
+                Directory.CreateDirectory(Transfer.templink);
+                File.Create(Transfer.SourceLink).Close();
 
-                StreamWriter SWCSharp = new StreamWriter(LastNameUser.SourceLink, true);
+                StreamWriter SWCSharp = new StreamWriter(Transfer.SourceLink, true);
                 SWCSharp.WriteLine(String.Format(rtbox));
                 SWCSharp.Close();
 
@@ -120,9 +120,9 @@ namespace personal_task.View.MainWindowPage
             openFileDialog.Filter = "Files (*.DOCX;*.DOCM;*.DOTX;*.DOTM)|*.DOCX;*.DOCM;*.DOTX;*.DOTM";
             if (openFileDialog.ShowDialog() == true)
             {
-                LastNameUser.FileLink  = $"Source\\{LastNameUser.CircleName}_File{Path.GetExtension(openFileDialog.SafeFileName)}";
-                File.Copy(openFileDialog.FileName, LastNameUser.FileLink);
-                LastNameUser.stringoffile = LastNameUser.FileLink;
+                Transfer.FileLink  = $"Source\\{Transfer.CircleName}_File{Path.GetExtension(openFileDialog.SafeFileName)}";
+                File.Copy(openFileDialog.FileName, Transfer.FileLink);
+                Transfer.stringoffile = Transfer.FileLink;
             }
             BtnOpen.Visibility = Visibility.Visible;
 
@@ -130,7 +130,7 @@ namespace personal_task.View.MainWindowPage
 
         private void BtnOpen_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start(LastNameUser.stringoffile);
+            Process.Start(Transfer.stringoffile);
         }
 
         private void borderdrop_Drop(object sender, DragEventArgs e)
@@ -138,9 +138,9 @@ namespace personal_task.View.MainWindowPage
             try
             {               
                 string[] files = (string[])e.Data.GetData(DataFormats.FileDrop);
-                LastNameUser.FileLink = $"Source\\{LastNameUser.CircleName}_File{Path.GetExtension(files[0])}";
-                File.Copy(files[0], LastNameUser.FileLink);
-                LastNameUser.stringoffile = LastNameUser.FileLink;
+                Transfer.FileLink = $"Source\\{Transfer.CircleName}_File{Path.GetExtension(files[0])}";
+                File.Copy(files[0], Transfer.FileLink);
+                Transfer.stringoffile = Transfer.FileLink;
                 BtnOpen.Visibility = Visibility.Visible;
             }
             catch (Exception)

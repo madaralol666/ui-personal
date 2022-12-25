@@ -7,7 +7,7 @@ using System.Windows.Documents;
 
 namespace personal_task.Core
 {
-    public static class LastNameUser
+    public static class Transfer
     {
         public static string lastName { get; set; }
         public static string RoleName { get; set; }

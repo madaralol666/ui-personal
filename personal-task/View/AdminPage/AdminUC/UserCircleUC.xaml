@@ -91,7 +91,7 @@
                                     Click="BtnDelete_Click"
                                     Foreground="White"
                                     Style="{StaticResource MaterialDesignFlatLightButton}"
-                                    ToolTip="Удалить заказ">
+                                    ToolTip="Удалить">
                                     <StackPanel Orientation="Horizontal">
                                         <materialDesign:PackIcon Kind="Remove" />
                                     </StackPanel>

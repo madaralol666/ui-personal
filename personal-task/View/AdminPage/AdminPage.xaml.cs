@@ -27,11 +27,6 @@ namespace personal_task.View.AdminPage
             InitializeComponent();
         }
 
-        private void MenuItemUser_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void MenuItemUerCircle_Click(object sender, RoutedEventArgs e)
         {
             GridMenuLoad.Children.Clear();

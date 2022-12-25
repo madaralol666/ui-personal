@@ -26,7 +26,8 @@ namespace personal_task.View.LoginPage
         public LoginPage()
         {
             InitializeComponent();
-            User userModel = FrameNavigate.DB.Users.FirstOrDefault(u => u.LastName == TbLogin.Text);
+            User userModel = FrameNavigate.DB.Users.FirstOrDefault(
+                u => u.LastName == TbLogin.Text);
             TbLogin.Text = Properties.Settings.Default.RememberMe;
             if (TbLogin.Text != string.Empty)
             {
@@ -43,12 +44,13 @@ namespace personal_task.View.LoginPage
         {
             try
             {
-                User userModel = FrameNavigate.DB.Users.FirstOrDefault(u => u.LastName == TbLogin.Text);
+                User userModel = FrameNavigate.DB.Users.FirstOrDefault(
+                    u => u.LastName == TbLogin.Text);
                 if (userModel != null)
                 {
-                    LastNameUser.lastName = TbLogin.Text;
-                    LastNameUser.RoleName = userModel.Role.RoleName.Trim();
-                    if (LastNameUser.RoleName == "Admin")
+                    Transfer.lastName = TbLogin.Text;
+                    Transfer.RoleName = userModel.Role.RoleName.Trim();
+                    if (Transfer.RoleName == "Admin")
                     {
                         FrameNavigate.objectFrame.Navigate(new AdminPage.AdminPage());
                     }
@@ -60,7 +62,7 @@ namespace personal_task.View.LoginPage
                 }
                 else
                 {
-                    MessageBox.Show("Ошибка данных",
+                    MessageBox.Show("Заполните поля",
                        "Системное сообщение",
                        MessageBoxButton.OK,
                        MessageBoxImage.Error);
@@ -106,10 +108,6 @@ namespace personal_task.View.LoginPage
                     Properties.Settings.Default.Save();
                 }
             }
-        }
-
-        private void TbLogin_TextChanged(object sender, TextChangedEventArgs e)
-        {
         }
     }
 }
